@@ -1,3 +1,7 @@
+window.onload = function () {
+  document.getElementById("autoplay").play();
+}
+
 const $force = document.querySelectorAll('#force')[0]
 const $touches = document.querySelectorAll('#touches')[0]
 const canvas = document.querySelectorAll('canvas')[0]
