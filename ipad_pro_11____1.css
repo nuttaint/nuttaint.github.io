@@ -419,6 +419,7 @@ div {
 	height: 239px;
 	background: url(GIF/_1_1.gif);
 	background-size: cover;
+	z-index: 1;
 }
 
 
