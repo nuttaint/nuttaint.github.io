@@ -343,7 +343,7 @@ div {
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
-	background: #B1AFFF;
+	background: rgba(176, 173, 255, 1);
 }
 
 #next {
