@@ -1,3 +1,7 @@
+window.onload = function () {
+    document.getElementById("autoplay").play();
+ }
+
 const canvas = new fabric.Canvas('canvas', { isDrawingMode: false });
 
 canvas.setBackgroundImage('', canvas.renderAll.bind(canvas));
