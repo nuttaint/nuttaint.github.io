@@ -8,6 +8,8 @@
 	<meta name="description" content="">
 	<link rel="StyleSheet" href="ipad_pro_11____1.css" />
 	<script src="https://secure.exportkit.com/cdn/js/ek_googlefonts.js?v=6"></script>
+
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
 	<!-- Add your custom HEAD content here -->
 
 </head>
@@ -17,10 +19,12 @@
 	<div id="touches"></div>
 	<div id="timestamp"></div>
 	<div id="result"></div>
-
+	<div>
+		<canvas id="canvas" width="1194" height="834"></canvas>
+	</div>
+	<br>
+	<div id="svg"></div>
 	<div id="content-container">
-
-
 		<div id="page_ipad_pro_11____3_ek1">
 			<div id="_bg__ipad_pro_11____3_ek2"></div>
 			<div id="rectangle_1_ek2"></div>
@@ -48,7 +52,7 @@
 			<div id="apple_1"></div>
 			<div id="lemon_1"></div>
 
-			<div id="undo_bottom">
+			<div id="undo_bottom" onclick="undoDraw()">
 				<div id="ellipse_2"></div>
 				<div id="undo_circular_arrow_white_1"></div>
 
@@ -65,7 +69,13 @@
 		</audio>
 
 
-		<script src="index.js"></script>
+
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/fabric@5.2.4/dist/fabric.min.js"></script>
+		<script src="main.js"></script>
+
+
+		<!--<script src="index.js"></script>-->
 
 
 
