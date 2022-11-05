@@ -1,6 +1,6 @@
-window.onload = function () {
-    document.getElementById("autoplay").play();
- }
+// window.onload = function () {
+//     document.getElementById("autoplay").play();
+//  }
 
 const canvas = new fabric.Canvas('canvas', { isDrawingMode: false });
 

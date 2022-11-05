@@ -75,9 +75,9 @@
 
 
 
-			<audio id="autoplay">
+			<!-- <audio id="autoplay">
 				<source src="sound/3_1.mp3" type="audio/mp3">
-			</audio>
+			</audio> -->
 		</div>
 
 
@@ -85,6 +85,11 @@
 		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/fabric@5.2.4/dist/fabric.min.js"></script>
 		<script src="main.js"></script>
+		<script>
+			const soundEffect = new Audio();
+			soundEffect.autoplay = true;
+			soundEffect.src = 'sound/3_1.mp3';
+		</script>
 
 
 		<!--<script src="index.js"></script>-->
