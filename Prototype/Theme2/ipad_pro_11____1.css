@@ -334,13 +334,16 @@ div {
 
 
 #_rectangle_4 {
-	top: 735px !important;
-	position: absolute !important;
+	top: 735px;
 	left: 940px;
 	width: 177px;
 	height: 65px;
-	background: url(skins/_rectangle_4.png);
-	background-size: cover;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	background: rgba(106, 212, 193, 1);
 }
 
 #next {
