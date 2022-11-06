@@ -24,7 +24,13 @@
 			<div id="_bg__ipad_pro_11____3_ek2"></div>
 			<div id="rectangle_1_ek2"></div>
 			<div id="rectangle_6"></div>
-			<div id="rectangle_8"></div>
+
+			<div id="rectangle_8">
+				<!-- กรอบขีดเส้น -->
+				<canvas id="canvas" width="935" height="230"></canvas>
+				<!-- สุดท้าย -->
+			</div>
+
 			<div id="image_3"></div>
 
 			<div id="_1_1"></div>
@@ -41,12 +47,7 @@
 
 
 
-			<!--ก๊อปก้อนนี้-->
-			<br>
-			<div>
-				<canvas id="canvas" width="1194" height="834"></canvas>
-			</div>
-			<!--ถึงนี้-->
+
 
 
 			<!--ก๊อปก้อนนี้-->
@@ -84,41 +85,25 @@
 
 		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/fabric@5.2.4/dist/fabric.min.js"></script>
+
 		<script src="main.js"></script>
-		<script>
+		<!-- <script>
 			const soundEffect = new Audio();
 			soundEffect.autoplay = true;
 			soundEffect.src = 'sound/3_1.mp3';
+		</script> -->
+		<script>
+			var nothing = new Audio('sound/3_1.mp3')
+			window.onload = function () {
+				nothing.play().then(function () {
+					// alert('Audio started unlocked!')
+				}).catch(function () {
+					// alert('Audio started locked')
+				})
+			}
 		</script>
 
-
 		<!--<script src="index.js"></script>-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
