@@ -24,14 +24,16 @@
 			<div id="_bg__ipad_pro_11____3_ek2"></div>
 			<div id="rectangle_1_ek2"></div>
 			<div id="rectangle_6"></div>
-
+			<div id="image_3"></div>
 			<div id="rectangle_8">
 				<!-- กรอบขีดเส้น -->
+				<button id="play">Play</button>
+
 				<canvas id="canvas" width="935" height="230"></canvas>
 				<!-- สุดท้าย -->
 			</div>
 
-			<div id="image_3"></div>
+
 
 			<div id="_1_1"></div>
 			<div id="rectangle_9"></div>
@@ -76,6 +78,7 @@
 
 
 
+
 			<!-- <audio id="autoplay">
 				<source src="sound/3_1.mp3" type="audio/mp3">
 			</audio> -->
@@ -83,134 +86,104 @@
 
 
 
-
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/fabric@5.2.4/dist/fabric.min.js"></script>
 
 		<script src="main.js"></script>
+		<script>
+			(function () {
+
+				// Check if the browser supports web audio. Safari wants a prefix.
+				if ('AudioContext' in window || 'webkitAudioContext' in window) {
+
+					//////////////////////////////////////////////////
+					// Here's the part for just playing an audio file.
+					//////////////////////////////////////////////////
+					var play = function play(audioBuffer) {
+						var source = context.createBufferSource();
+						source.buffer = audioBuffer;
+						source.connect(context.destination);
+						source.start();
+					};
+
+					var URL = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/Yodel_Sound_Effect.mp3';
+					var AudioContext = window.AudioContext || window.webkitAudioContext;
+					var context = new AudioContext(); // Make it crossbrowser
+					var gainNode = context.createGain();
+					gainNode.gain.value = 1; // set volume to 100%
+					var playButton = document.querySelector('#play');
+					var yodelBuffer = void 0;
+
+					// The Promise-based syntax for BaseAudioContext.decodeAudioData() is not supported in Safari(Webkit).
+					window.fetch(URL)
+						.then(response => response.arrayBuffer())
+						.then(arrayBuffer => context.decodeAudioData(arrayBuffer,
+							audioBuffer => {
+								yodelBuffer = audioBuffer;
+							},
+							error =>
+								console.error(error)
+						))
+
+					playButton.onclick = function () {
+						return play(yodelBuffer);
+					};
+
+
+
+
+					//////////////////////////////////////////////////
+					// Here's the part for unlocking the audio context, probably for iOS only
+					//////////////////////////////////////////////////
+
+					// From https://paulbakaus.com/tutorials/html5/web-audio-on-ios/
+					// "The only way to unmute the Web Audio context is to call noteOn() right after a user interaction. This can be a click or any of the touch events (AFAIK – I only tested click and touchstart)."
+
+					var unmute = document.getElementById('unmute');
+					unmute.addEventListener('click', unlock);
+
+					function unlock() {
+						console.log("unlocking")
+						// create empty buffer and play it
+						var buffer = context.createBuffer(1, 1, 22050);
+						var source = context.createBufferSource();
+						source.buffer = buffer;
+						source.connect(context.destination);
+
+						// play the file. noteOn is the older version of start()
+						source.start ? source.start(0) : source.noteOn(0);
+
+						// by checking the play state after some time, we know if we're really unlocked
+						setTimeout(function () {
+							if ((source.playbackState === source.PLAYING_STATE || source.playbackState === source.FINISHED_STATE)) {
+								// Hide the unmute button if the context is unlocked.
+								unmute.style.display = "none";
+							}
+						}, 0);
+					}
+
+					// Try to unlock, so the unmute is hidden when not necessary (in most browsers).
+					unlock();
+				}
+			}
+			)();
+		</script>
 		<!-- <script>
 			const soundEffect = new Audio();
 			soundEffect.autoplay = true; 
 			soundEffect.src = 'sound/3_1.mp3';
 		</script> -->
 
-		<script>
 
 
 
-			// var music = new Audio("http://curtastic.com/nightmare.mp3")
 
-			// var chime = new Audio("http://curtastic.com/gold.wav")
 
-			// var nothing = new Audio("http://touchbasicapp.com/nothing.wav")
 
-			// var allAudio = []
 
-			// allAudio.push(music)
 
-			// allAudio.push(chime)
 
-
-
-			// var tapped = function (e) {
-
-			// 	if (e.target && e.target.tagName == 'BUTTON')
-			// 		return;
-
-			// 	messagediv.innerHTML = "tapped"
-
-
-
-			// 	// Play all audio files on the first tap and stop them immediately.
-
-			// 	if (allAudio) {
-
-			// 		for (var audio of allAudio) {
-
-			// 			audio.play()
-
-			// 			audio.pause()
-
-			// 			audio.currentTime = 0
-
-			// 		}
-
-			// 		allAudio = null
-
-			// 	}
-
-
-
-			// 	// We should be able to play music delayed now (not during the tap event).
-
-			// 	messagediv.innerHTML = "Music starts in 2 seconds..."
-
-			// 	setTimeout(function () {
-
-			// 		messagediv.innerHTML = "Music playing. <button onclick='stop()'>Stop</button>"
-
-			// 		music.play()
-
-			// 	}, 2000)
-
-
-
-			// }
-
-			// document.body.addEventListener('touchstart', tapped, false)
-
-			// document.body.addEventListener('click', tapped, false)
-
-
-
-			// var stop = function () {
-
-			// 	music.pause()
-
-			// 	loop = null
-
-			// 	document.body.removeEventListener('touchstart', tapped, false)
-
-			// 	document.body.removeEventListener('click', tapped, false)
-
-			// }
-
-
-
-			// // Check if audio starts already unlocked by playing a blank wav.
-
-			// nothing.play().then(function () {
-
-			// 	lockeddiv.innerHTML = "Audio started unlocked!"
-
-			// }).catch(function () {
-
-			// 	lockeddiv.innerHTML = "Audio started locked :("
-
-			// })
-
-
-
-			// var loop = function () {
-
-			// 	// Try to play chimes whenever we want (not during user action).
-
-			// 	if (Math.random() < .01) {
-
-			// 		chime.play().then(function () {
-
-			// 			lockeddiv.innerHTML = "Audio is now unlocked!"
-
-			// 		})
-
-			// 	}
-
-			// 	setTimeout(loop, 16)
-
-			// }
-
-			// loop()
-
-
-			var music = new Audio("")
+		<!-- var music = new Audio("")
 			var chime = new Audio("sound/3_1.mp3")
 			var nothing = new Audio("")
 			var allAudio = []
@@ -263,8 +236,8 @@
 					})
 				}
 			}
-			loop()
-		</script>
+			loop() -->
+
 
 		<!--<script src="index.js"></script>-->
 
