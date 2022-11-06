@@ -27,7 +27,7 @@
 			<div id="image_3"></div>
 			<div id="rectangle_8">
 				<!-- กรอบขีดเส้น -->
-				<button id="play">Play</button>
+
 
 				<canvas id="canvas" width="935" height="230"></canvas>
 				<!-- สุดท้าย -->
@@ -75,6 +75,15 @@
 
 			</div>
 			<!--ถึงนี้-->
+			<div id="playy">
+				<button id="play" class="button">Play</button>
+			</div>
+			<script>
+				document.getElementById("play").addEventListener("click", myFunction);
+				function myFunction() {
+					document.getElementById("play").disabled = true;
+				}
+			</script>
 
 
 
@@ -93,12 +102,7 @@
 		<script>
 			(function () {
 
-				// Check if the browser supports web audio. Safari wants a prefix.
 				if ('AudioContext' in window || 'webkitAudioContext' in window) {
-
-					//////////////////////////////////////////////////
-					// Here's the part for just playing an audio file.
-					//////////////////////////////////////////////////
 					var play = function play(audioBuffer) {
 						var source = context.createBufferSource();
 						source.buffer = audioBuffer;
@@ -106,7 +110,7 @@
 						source.start();
 					};
 
-					var URL = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/Yodel_Sound_Effect.mp3';
+					var URL = 'sound/3_1.mp3';
 					var AudioContext = window.AudioContext || window.webkitAudioContext;
 					var context = new AudioContext(); // Make it crossbrowser
 					var gainNode = context.createGain();
@@ -114,7 +118,6 @@
 					var playButton = document.querySelector('#play');
 					var yodelBuffer = void 0;
 
-					// The Promise-based syntax for BaseAudioContext.decodeAudioData() is not supported in Safari(Webkit).
 					window.fetch(URL)
 						.then(response => response.arrayBuffer())
 						.then(arrayBuffer => context.decodeAudioData(arrayBuffer,
@@ -128,16 +131,6 @@
 					playButton.onclick = function () {
 						return play(yodelBuffer);
 					};
-
-
-
-
-					//////////////////////////////////////////////////
-					// Here's the part for unlocking the audio context, probably for iOS only
-					//////////////////////////////////////////////////
-
-					// From https://paulbakaus.com/tutorials/html5/web-audio-on-ios/
-					// "The only way to unmute the Web Audio context is to call noteOn() right after a user interaction. This can be a click or any of the touch events (AFAIK – I only tested click and touchstart)."
 
 					var unmute = document.getElementById('unmute');
 					unmute.addEventListener('click', unlock);
@@ -161,13 +154,13 @@
 							}
 						}, 0);
 					}
-
-					// Try to unlock, so the unmute is hidden when not necessary (in most browsers).
 					unlock();
 				}
 			}
 			)();
 		</script>
+
+
 		<!-- <script>
 			const soundEffect = new Audio();
 			soundEffect.autoplay = true; 
