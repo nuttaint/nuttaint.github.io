@@ -1,3 +1,24 @@
+.refresh {
+	top: 735px;
+	left: 258px;
+	width: 66px;
+	height: 64px;
+	-ms-border-radius: 33px / 32px;
+	-o-border-radius: 33px / 32px;
+	-moz-border-radius: 33px / 32px;
+	-webkit-border-radius: 33px / 32px;
+	border-radius: 33px / 32px;
+	background: rgba(251.81, 68.2, 112.27, 1);
+}
+
+.refresh:active {
+	background: rgb(205, 41, 79);
+}
+
+.refresh:hover {
+	background: rgb(205, 41, 79);
+}
+
 .button {
 	display: inline-block;
 	padding: 10px 25px;
@@ -47,8 +68,8 @@
 }
 
 #play2 {
-	top: 642px;
-	left: 300px;
+	top: 730px;
+	left: 550px;
 	width: 110px;
 	height: 70px;
 	z-index: 1;
@@ -57,6 +78,14 @@
 #play3 {
 	top: 735px;
 	left: 270px;
+	width: 110px;
+	height: 70px;
+	z-index: 1;
+}
+
+#play_fix {
+	top: 737px;
+	left: 357px;
 	width: 110px;
 	height: 70px;
 	z-index: 1;
@@ -539,10 +568,16 @@ div {
 }
 
 #undo_bottom {
-	top: 736px;
-	left: 256px;
+	top: 735px;
+	left: 260px;
 	width: 66px;
 	height: 64px;
+	-ms-border-radius: 33px / 32px;
+	-o-border-radius: 33px / 32px;
+	-moz-border-radius: 33px / 32px;
+	-webkit-border-radius: 33px / 32px;
+	border-radius: 33px / 32px;
+	background: rgba(251.81, 68.2, 112.27, 1);
 }
 
 #ellipse_2 {
@@ -557,6 +592,7 @@ div {
 	border-radius: 33px / 32px;
 	background: rgba(251.81, 68.2, 112.27, 1);
 }
+
 
 
 #undo_circular_arrow_white_1 {
@@ -2067,9 +2103,10 @@ div {
 	position: absolute !important;
 	left: 969px;
 	width: 245px;
-	height: 162px;
+	height: 180px;
 	background: url(skins/fuji_1.png);
 	background-size: cover;
+	z-index: 1;
 }
 
 #undo_bottom_ek6 {
