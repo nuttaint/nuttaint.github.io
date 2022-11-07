@@ -7,7 +7,7 @@ const canvas = new fabric.Canvas('canvas', { isDrawingMode: false });
 canvas.setBackgroundImage('', canvas.renderAll.bind(canvas));
 
 canvas.freeDrawingBrush.color = 'black';
-canvas.freeDrawingBrush.width = 10;
+canvas.freeDrawingBrush.width = 7;
 
 canvas.isDrawingMode = !canvas.isDrawingMode;
 
