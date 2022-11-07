@@ -2,6 +2,98 @@
 	@name ipad_pro_11____1
 */
 /* Only edit this if you know what you are doing! */
+.refresh {
+	top: 720px;
+	left: 280px;
+	width: 66px;
+	height: 64px;
+	-ms-border-radius: 33px / 32px;
+	-o-border-radius: 33px / 32px;
+	-moz-border-radius: 33px / 32px;
+	-webkit-border-radius: 33px / 32px;
+	border-radius: 33px / 32px;
+	border: 6px solid #000000;
+	background: rgba(251.81, 68.2, 112.27, 1);
+}
+
+.refresh:active {
+	background: rgb(205, 41, 79);
+}
+
+.refresh:hover {
+	background: rgb(205, 41, 79);
+}
+
+.button {
+	display: inline-block;
+	padding: 3px 25px;
+	font-size: 30px;
+	font-family: 'caramello';
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: rgb(0, 0, 0);
+	-ms-border-radius: 55px;
+	-o-border-radius: 55px;
+	-moz-border-radius: 55px;
+	-webkit-border-radius: 55px;
+	border-radius: 10px;
+	border: 6px solid #000000;
+	background-color: #398cf9;
+}
+
+.button:disabled {
+	display: inline-block;
+	padding: 3px 25px;
+	font-size: 30px;
+	font-family: 'caramello';
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: rgb(0, 0, 0);
+	-ms-border-radius: 55px;
+	-o-border-radius: 55px;
+	-moz-border-radius: 55px;
+	-webkit-border-radius: 55px;
+	border-radius: 10px;
+	border: 6px solid #000000;
+	background-color: #0066e7;
+}
+
+.button:hover {
+	background-color: #0066e7;
+}
+
+.button:active {
+	background-color: #0066e7;
+}
+
+#playy {
+	top: 720px;
+	left: 375px;
+	width: 110px;
+	height: 70px;
+	z-index: 1;
+}
+
+#play2 {
+	top: 680px;
+	left: 320px;
+	width: 110px;
+	height: 70px;
+	z-index: 1;
+}
+
+#play3 {
+	top: 720px;
+	left: 280px;
+	width: 110px;
+	height: 70px;
+	z-index: 1;
+}
+
 body {
 	margin: 0px;
 	padding: 0px;
@@ -231,7 +323,7 @@ div {
 }
 
 #group_1 {
-	top: 568px;
+	top: 518px;
 	left: 121px;
 	width: 540px;
 	height: 103px;
@@ -246,7 +338,7 @@ div {
 	-o-border-radius: 55px;
 	-moz-border-radius: 55px;
 	-webkit-border-radius: 55px;
-	border-radius: 55px;
+	border-radius: 20px;
 	border: 6px solid #000000;
 	background: rgba(252, 231, 0, 1);
 }
@@ -3175,7 +3267,7 @@ div {
 #car3_1 {
 	top: 656px !important;
 	position: absolute !important;
-	left: 414px;
+	left: 490px;
 	width: 388px;
 	height: 177px;
 	background: url(skins/car3_1.png);
@@ -7618,7 +7710,7 @@ div {
 	left: 580px;
 	width: 520px;
 	height: 584px;
-	background: url(skins/______________2_1.png);
+	background: url(skins/snail.png);
 	background-size: 520px 584px;
 	background-repeat: no-repeat;
 }
@@ -8732,7 +8824,7 @@ div {
 #car_5 {
 	top: 674px !important;
 	position: absolute !important;
-	left: 464px;
+	left: 580px;
 	width: 300px;
 	height: 148px;
 	background: url(skins/car_5.png);
@@ -9456,11 +9548,12 @@ div {
 #car4_2 {
 	top: 696px !important;
 	position: absolute !important;
-	left: 375px;
+	left: 550px;
 	width: 480px;
 	height: 144px;
 	background: url(skins/car4_2.png);
-	background-size: cover;
+	background-size: 350px 100px;
+	background-repeat: no-repeat;
 }
 
 #page_ipad_pro_11____43_ek1 {
@@ -9942,7 +10035,7 @@ div {
 #car6_1 {
 	top: 680px !important;
 	position: absolute !important;
-	left: 420px;
+	left: 530px;
 	width: 368px;
 	height: 156px;
 	background: url(skins/car6_1.png);

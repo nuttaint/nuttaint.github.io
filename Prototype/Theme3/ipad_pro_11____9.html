@@ -60,13 +60,11 @@
 			<div id="image_13"></div>
 			<div id="_7_1"></div>
 
-			<div id="undo_bottom">
-				<div id="ellipse_2_ek6"></div>
-				<div id="undo_circular_arrow_white_1_ek6"></div>
 
-			</div>
 			<div id="rectangle_9_ek6"></div>
-			<div id="rectangle_8_ek6"></div>
+			<div id="rectangle_8_ek6">
+				<canvas id="canvas" width="441" height="530"></canvas>
+			</div>
 			<div id="ex3">
 				<span
 					class="char">%E0%B8%95%E0%B8%B1%E0%B8%A7%E0%B8%AD%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B8%88%E0%B9%89%E0%B8%B2</span>
@@ -75,10 +73,90 @@
 			<div id="boat2_2"></div>
 
 		</div>
-		<audio id="autoplay">
-			<source src="sound/9_1.mp3" type="audio/mp3">
-		</audio>
-		<script src="index.js"></script>
+		<!-- ปุ่มรีเฟรช -->
+		<div class="refresh" onClick="window.location.reload()">
+			<div id="undo_circular_arrow_white_1"></div>
+		</div>
+		<!--ถึงนี้-->
+		<div id="playy">
+			<button id="play" class="button">Play</button>
+		</div>
+		<script>
+			document.getElementById("play").addEventListener("click", myFunction);
+			function myFunction() {
+				document.getElementById("play").disabled = true;
+			}
+		</script>
+
+
+
+
+
+		<script>
+			(function () {
+
+				if ('AudioContext' in window || 'webkitAudioContext' in window) {
+					var play = function play(audioBuffer) {
+						var source = context.createBufferSource();
+						source.buffer = audioBuffer;
+						source.connect(context.destination);
+						source.start();
+					};
+
+					var URL = 'sound/9_1.mp3';
+					var AudioContext = window.AudioContext || window.webkitAudioContext;
+					var context = new AudioContext(); // Make it crossbrowser
+					var gainNode = context.createGain();
+					gainNode.gain.value = 1; // set volume to 100%
+					var playButton = document.querySelector('#play');
+					var yodelBuffer = void 0;
+
+					window.fetch(URL)
+						.then(response => response.arrayBuffer())
+						.then(arrayBuffer => context.decodeAudioData(arrayBuffer,
+							audioBuffer => {
+								yodelBuffer = audioBuffer;
+							},
+							error =>
+								console.error(error)
+						))
+
+					playButton.onclick = function () {
+						return play(yodelBuffer);
+					};
+
+					var unmute = document.getElementById('unmute');
+					unmute.addEventListener('click', unlock);
+
+					function unlock() {
+						console.log("unlocking")
+						// create empty buffer and play it
+						var buffer = context.createBuffer(1, 1, 22050);
+						var source = context.createBufferSource();
+						source.buffer = buffer;
+						source.connect(context.destination);
+
+						// play the file. noteOn is the older version of start()
+						source.start ? source.start(0) : source.noteOn(0);
+
+						// by checking the play state after some time, we know if we're really unlocked
+						setTimeout(function () {
+							if ((source.playbackState === source.PLAYING_STATE || source.playbackState === source.FINISHED_STATE)) {
+								// Hide the unmute button if the context is unlocked.
+								unmute.style.display = "none";
+							}
+						}, 0);
+					}
+					unlock();
+				}
+			}
+			)();
+		</script>
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/fabric@5.2.4/dist/fabric.min.js"></script>
+
+		<script src="main.js"></script>
+		<!--<script src="index.js"></script>-->
 
 
 
