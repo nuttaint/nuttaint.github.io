@@ -37,7 +37,7 @@
 .button:disabled {
 	display: inline-block;
 	padding: 6px 25px;
-	font-size: 36px;
+	font-size: 30px;
 	font-family: 'caramello';
 	cursor: pointer;
 	text-align: center;
@@ -464,7 +464,7 @@ div {
 }
 
 #ex {
-	top: 90px;
+	top: 80px;
 	left: 270px;
 	width: 305px;
 	height: 122px;
@@ -481,7 +481,7 @@ div {
 }
 
 #ex2 {
-	top: 50px;
+	top: 40px;
 	left: 270px;
 	width: 305px;
 	height: 122px;
@@ -498,7 +498,7 @@ div {
 }
 
 #ex3 {
-	top: 50px;
+	top: 40px;
 	left: 160px;
 	width: 305px;
 	height: 122px;
@@ -529,10 +529,11 @@ div {
 	-moz-text-shadow: 1px 5px 4px rgba(0, 0, 0, 0.25);
 	text-shadow: 1px 5px 4px rgba(0, 0, 0, 0.25);
 	color: #000000;
+	z-index: 1;
 }
 
 #ex5 {
-	top: 90px;
+	top: 80px;
 	left: 300px;
 	width: 305px;
 	height: 122px;
@@ -566,7 +567,7 @@ div {
 }
 
 #ex7 {
-	top: 630px;
+	top: 640px;
 	left: 250px;
 	width: 305px;
 	height: 122px;
@@ -583,7 +584,7 @@ div {
 }
 
 #ex8 {
-	top: 45px;
+	top: 55px;
 	left: 280px;
 	width: 305px;
 	height: 122px;
