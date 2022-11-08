@@ -21,8 +21,8 @@
 
 .button2 {
 	display: inline-block;
-	padding: 2px 25px;
-	font-size: 36px;
+	padding: 4px 25px;
+	font-size: 33px;
 	font-family: 'caramello';
 	cursor: pointer;
 	text-align: center;
@@ -36,8 +36,8 @@
 
 .button2:disabled {
 	display: inline-block;
-	padding: 2px 25px;
-	font-size: 36px;
+	padding: 4px 25px;
+	font-size: 33px;
 	font-family: 'caramello';
 	cursor: pointer;
 	text-align: center;
@@ -57,22 +57,6 @@
 	background-color: #27b82c;
 }
 
-.button {
-	display: inline-block;
-	padding: 45px 121px;
-	font-size: 80px;
-	font-family: 'caramello';
-	cursor: pointer;
-	text-align: center;
-	text-decoration: none;
-	outline: none;
-	color: rgb(0, 0, 0);
-	background-color: #F9F9C5;
-	border: none;
-	border-radius: 15px;
-	z-index: 3;
-	opacity: 0.8;
-}
 
 .button:disabled {
 	display: inline-block;
@@ -104,14 +88,14 @@
 #playy {
 	top: 453px;
 	left: 145px;
-	width: 1500px;
-	height: 100px;
+	width: 1000px;
+	height: 1px;
 	z-index: 1;
 }
 
 #play2 {
 	top: 730px;
-	left: 510px;
+	left: 520px;
 	width: 200px;
 	height: 70px;
 	z-index: 1;
@@ -119,8 +103,8 @@
 
 #play3 {
 	top: 735px;
-	left: 270px;
-	width: 110px;
+	left: 280px;
+	width: 200px;
 	height: 70px;
 	z-index: 1;
 }
@@ -7443,7 +7427,7 @@ div {
 	left: 0px;
 	width: 606.63px;
 	height: 556px;
-	background: url(skins/ship_1.png);
+	background: url(skins/ship.png);
 	background-size: cover;
 }
 

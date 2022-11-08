@@ -19,6 +19,36 @@
 	background: rgb(205, 41, 79);
 }
 
+.button2 {
+	display: inline-block;
+	padding: 4px 25px;
+	font-size: 46px;
+	font-family: 'caramello';
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background-color: #f85be1;
+	border: none;
+	border-radius: 60px;
+}
+
+.button2:disabled {
+	display: inline-block;
+	padding: 4px 25px;
+	font-size: 46px;
+	font-family: 'caramello';
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background-color: #e647ce;
+	border: none;
+	border-radius: 60px;
+}
+
 .button {
 	display: inline-block;
 	padding: 6px 25px;
@@ -31,10 +61,27 @@
 	color: #fff;
 	background-color: #f85be1;
 	border: none;
-	border-radius: 40px;
+	border-radius: 60px;
 }
 
 .button:disabled {
+	display: inline-block;
+	padding: 10px 25px;
+	font-size: 24px;
+	font-family: 'caramello';
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background-color: #ffffff;
+	border: none;
+	border-radius: 15px;
+	z-index: -3;
+	visibility: hidden;
+}
+
+.button3 {
 	display: inline-block;
 	padding: 6px 25px;
 	font-size: 30px;
@@ -44,18 +91,33 @@
 	text-decoration: none;
 	outline: none;
 	color: #fff;
-	background-color: #e849d0;
+	background-color: #f85be1;
 	border: none;
-	border-radius: 40px;
+	border-radius: 10px;
 }
 
-.button:hover {
-	background-color: #e849d0;
+.button3:disabled {
+	display: inline-block;
+	padding: 6px 25px;
+	font-size: 30px;
+	font-family: 'caramello';
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background-color: #e647ce;
+	border: none;
+	border-radius: 10px;
+}
+
+/* .button:hover {
+	background-color: #27b82c
 }
 
 .button:active {
-	background-color: #e849d0;
-}
+	background-color: #27b82c;
+} */
 
 
 
@@ -69,16 +131,16 @@
 
 #play2 {
 	top: 610px;
-	left: 400px;
-	width: 110px;
+	left: 320px;
+	width: 230px;
 	height: 70px;
 	z-index: 1;
 }
 
 #play3 {
 	top: 735px;
-	left: 270px;
-	width: 110px;
+	left: 280px;
+	width: 200px;
 	height: 70px;
 	z-index: 1;
 }
@@ -751,6 +813,8 @@ div {
 	transform: rotate(340deg);
 	background-size: cover;
 }
+
+
 
 
 #cupcake_1 {
@@ -7664,9 +7728,9 @@ div {
 }
 
 #group_2 {
-	top: 187px;
-	left: 530px;
-	width: 600.13px;
+	top: 227px;
+	left: 500px;
+	width: 630.13px;
 	height: 440px;
 	z-index: 0;
 }
@@ -7675,9 +7739,9 @@ div {
 	top: 0px !important;
 	position: absolute !important;
 	left: 0px;
-	width: 600.13px;
+	width: 630.13px;
 	height: 440px;
-	background: url(skins/butterfly_dot_1.png);
+	background: url(skins/butterfly.png);
 	background-size: cover;
 }
 

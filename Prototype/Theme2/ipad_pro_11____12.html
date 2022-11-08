@@ -80,9 +80,38 @@
 			<div id="undo_circular_arrow_white_1"></div>
 		</div>
 		<!--ถึงนี้-->
-		<div id="playy">
-			<button id="play" class="button">Play</button>
+		<div id="play1">
+			<button id="play" class="button">"แตะ" เพื่อเริ่มขีดเส้น</button>
 		</div>
+
+		<!-- copy here ปุ่มบังคับ -->
+		<style>
+			.button {
+				display: inline-block;
+				padding: 50px 41px;
+				font-size: 80px;
+				font-family: 'caramello';
+				cursor: pointer;
+				text-align: center;
+				text-decoration: none;
+				outline: none;
+				color: rgb(0, 0, 0);
+				background-color: #FFDCF5;
+				border: none;
+				border-radius: 15px;
+				z-index: 3;
+				opacity: 0.8;
+			}
+
+			#play1 {
+				top: 426px;
+				left: 218px;
+				width: 1000px;
+				height: 0px;
+				z-index: 1;
+			}
+		</style>
+		<!-- to here ปุ่มบังคับ -->
 		<script>
 			document.getElementById("play").addEventListener("click", myFunction);
 			function myFunction() {
@@ -105,7 +134,7 @@
 						source.start();
 					};
 
-					var URL = 'sound/1.mp3';
+					var URL = 'sound/12_1.mp3';
 					var AudioContext = window.AudioContext || window.webkitAudioContext;
 					var context = new AudioContext(); // Make it crossbrowser
 					var gainNode = context.createGain();

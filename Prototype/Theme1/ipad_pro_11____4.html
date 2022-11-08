@@ -60,8 +60,30 @@
 			<!--ถึงนี้-->
 
 			<div id="playy">
-				<button id="play" class="button">Play</button>
+				<button id="play" class="button">"แตะ" เพื่อเริ่มขีดเส้น</button>
 			</div>
+
+			<!-- copy here ปุ่มบังคับ -->
+			<style>
+				.button {
+					display: inline-block;
+					padding: 45px 121px;
+					font-size: 80px;
+					font-family: 'caramello';
+					cursor: pointer;
+					text-align: center;
+					text-decoration: none;
+					outline: none;
+					color: rgb(0, 0, 0);
+					background-color: #F9F9C5;
+					border: none;
+					border-radius: 15px;
+					z-index: 3;
+					opacity: 0.8;
+				}
+			</style>
+			<!-- copy here ปุ่มบังคับ -->
+
 			<script>
 				document.getElementById("play").addEventListener("click", myFunction);
 				function myFunction() {
