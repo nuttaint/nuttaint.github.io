@@ -2,10 +2,7 @@
 //     document.getElementById("autoplay").play();
 //  }
 
-document.getElementById("play").addEventListener("click", myFunction);
-function myFunction() {
-    document.getElementById("play").disabled = true;
-}
+
 time = 1;
 interval = setInterval(function () {
     time--;
