@@ -15,7 +15,7 @@ interval = setInterval(function () {
         // click
         document.getElementById('play').click();
     }
-}, 1000)
+}, 2000)
 
 
 
