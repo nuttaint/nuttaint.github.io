@@ -2,6 +2,24 @@
 //     document.getElementById("autoplay").play();
 //  }
 
+document.getElementById("play").addEventListener("click", myFunction);
+function myFunction() {
+    document.getElementById("play").disabled = true;
+}
+time = 1;
+interval = setInterval(function () {
+    time--;
+    if (time == 0) {
+        // stop timer
+        clearInterval(interval);
+        // click
+        document.getElementById('play').click();
+    }
+}, 1000)
+
+
+
+
 const canvas = new fabric.Canvas('canvas', { isDrawingMode: false });
 
 canvas.setBackgroundImage('', canvas.renderAll.bind(canvas));
