@@ -19,10 +19,10 @@
 	background: rgb(205, 41, 79);
 }
 
-.button {
+.button2 {
 	display: inline-block;
-	padding: 10px 25px;
-	font-size: 24px;
+	padding: 2px 25px;
+	font-size: 36px;
 	font-family: 'caramello';
 	cursor: pointer;
 	text-align: center;
@@ -32,6 +32,46 @@
 	background-color: #2edd34;
 	border: none;
 	border-radius: 15px;
+}
+
+.button2:disabled {
+	display: inline-block;
+	padding: 2px 25px;
+	font-size: 36px;
+	font-family: 'caramello';
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background-color: #27b82c;
+	border: none;
+	border-radius: 15px;
+}
+
+.button2:hover {
+	background-color: #27b82c
+}
+
+.button2:active {
+	background-color: #27b82c;
+}
+
+.button {
+	display: inline-block;
+	padding: 45px 121px;
+	font-size: 80px;
+	font-family: 'caramello';
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: rgb(0, 0, 0);
+	background-color: #F9F9C5;
+	border: none;
+	border-radius: 15px;
+	z-index: 3;
+	opacity: 0.8;
 }
 
 .button:disabled {
@@ -44,33 +84,35 @@
 	text-decoration: none;
 	outline: none;
 	color: #fff;
-	background-color: #27b82c;
+	background-color: #ffffff;
 	border: none;
 	border-radius: 15px;
+	z-index: -3;
+	visibility: hidden;
 }
 
-.button:hover {
+/* .button:hover {
 	background-color: #27b82c
 }
 
 .button:active {
 	background-color: #27b82c;
-}
+} */
 
 
 
 #playy {
-	top: 737px;
-	left: 340px;
-	width: 110px;
-	height: 70px;
+	top: 453px;
+	left: 145px;
+	width: 1500px;
+	height: 100px;
 	z-index: 1;
 }
 
 #play2 {
 	top: 730px;
-	left: 550px;
-	width: 110px;
+	left: 510px;
+	width: 200px;
 	height: 70px;
 	z-index: 1;
 }
