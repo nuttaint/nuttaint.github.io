@@ -2,6 +2,8 @@
 	@name ipad_pro_11____1
 */
 /* Only edit this if you know what you are doing! */
+
+
 .refresh {
 	top: 720px;
 	left: 280px;
@@ -26,8 +28,8 @@
 
 .button {
 	display: inline-block;
-	padding: 3px 25px;
-	font-size: 30px;
+	padding: 1px 25px;
+	font-size: 40px;
 	font-family: 'caramello';
 	cursor: pointer;
 	text-align: center;
@@ -40,13 +42,14 @@
 	-webkit-border-radius: 55px;
 	border-radius: 10px;
 	border: 6px solid #000000;
-	background-color: #398cf9;
+	background-color: #f9f939;
+	font-weight: bold;
 }
 
 .button:disabled {
 	display: inline-block;
-	padding: 3px 25px;
-	font-size: 30px;
+	padding: 1px 25px;
+	font-size: 40px;
 	font-family: 'caramello';
 	cursor: pointer;
 	text-align: center;
@@ -59,16 +62,60 @@
 	-webkit-border-radius: 55px;
 	border-radius: 10px;
 	border: 6px solid #000000;
-	background-color: #0066e7;
+	background-color: #e0e02e;
+	font-weight: bold;
+	visibility: hidden;
 }
 
-.button:hover {
+.button2 {
+	display: inline-block;
+	padding: 1px 25px;
+	font-size: 60px;
+	font-family: 'caramello';
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: rgb(0, 0, 0);
+	-ms-border-radius: 55px;
+	-o-border-radius: 55px;
+	-moz-border-radius: 55px;
+	-webkit-border-radius: 55px;
+	border-radius: 20px;
+	border: 6px solid #000000;
+	background-color: #f93939;
+	font-weight: bold;
+	text-shadow: 1px 5px 4px rgba(0, 0, 0, 0.25);
+}
+
+.button2:disabled {
+	display: inline-block;
+	padding: 1px 25px;
+	font-size: 60px;
+	font-family: 'caramello';
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: rgb(0, 0, 0);
+	-ms-border-radius: 55px;
+	-o-border-radius: 55px;
+	-moz-border-radius: 55px;
+	-webkit-border-radius: 55px;
+	border-radius: 20px;
+	border: 6px solid #000000;
+	background-color: #d82323;
+	font-weight: bold;
+	text-shadow: 1px 5px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* .button:hover {
 	background-color: #0066e7;
 }
 
 .button:active {
 	background-color: #0066e7;
-}
+} */
 
 #playy {
 	top: 720px;
@@ -79,18 +126,18 @@
 }
 
 #play2 {
-	top: 680px;
-	left: 320px;
-	width: 110px;
-	height: 70px;
+	top: 655px;
+	left: 260px;
+	width: 310px;
+	height: 0px;
 	z-index: 1;
 }
 
 #play3 {
-	top: 720px;
-	left: 280px;
-	width: 110px;
-	height: 70px;
+	top: 620px;
+	left: 65px;
+	width: 210px;
+	height: 0px;
 	z-index: 1;
 }
 
@@ -835,6 +882,7 @@ div {
 
 
 #pointing2_1 {
+	display: block;
 	top: 540px !important;
 	position: absolute !important;
 	left: 25px;
@@ -9545,7 +9593,7 @@ div {
 	top: 696px !important;
 	position: absolute !important;
 	left: 550px;
-	width: 480px;
+	width: 360px;
 	height: 144px;
 	background: url(skins/car4_2.png);
 	background-size: 350px 100px;

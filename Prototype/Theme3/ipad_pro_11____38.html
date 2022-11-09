@@ -74,9 +74,37 @@
 			<div id="undo_circular_arrow_white_1"></div>
 		</div>
 		<!--ถึงนี้-->
-		<div id="playy">
-			<button id="play" class="button">Play</button>
+		<div id="play1">
+			<button id="play" class="button">"แตะ" เพื่อเริ่มขีดเส้น</button>
 		</div>
+
+		<style>
+			.button {
+				display: inline-block;
+				padding: 40px 165px;
+				font-size: 70px;
+				font-family: 'caramello';
+				cursor: pointer;
+				text-align: center;
+				text-decoration: none;
+				outline: none;
+				color: rgb(0, 0, 0);
+				background-color: #f4ff7c;
+				border: none;
+				border-radius: 15px;
+				z-index: 3;
+				opacity: 0.8;
+			}
+
+			#play1 {
+				top: 87px;
+				left: 580px;
+				width: 320px;
+				height: 0px;
+				z-index: 1;
+			}
+		</style>
+
 		<script>
 			document.getElementById("play").addEventListener("click", myFunction);
 			function myFunction() {
