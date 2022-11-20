@@ -75,6 +75,26 @@
 	visibility: hidden;
 }
 
+#nextnext {
+	top: 735px;
+	left: 940px;
+	width: 177px;
+	height: 65px;
+
+}
+
+#next {
+	top: 740px;
+	left: 995px;
+	width: 151px;
+	height: 61px;
+	overflow: hidden;
+	font-family: 'caramello';
+	font-size: 32px;
+	text-align: left;
+	color: #FFFFFF;
+}
+
 /* .button:hover {
 	background-color: #27b82c
 }
