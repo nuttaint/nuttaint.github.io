@@ -14,11 +14,6 @@
 </head>
 
 <body>
-	<div id="force"></div>
-	<div id="touches"></div>
-	<div id="timestamp"></div>
-	<div id="result"></div>
-	<div id="svg"></div>
 	<div id="content-container">
 		<div id="page_ipad_pro_11____3_ek1">
 			<div id="_bg__ipad_pro_11____3_ek2"></div>
@@ -220,7 +215,7 @@
 					var context = new AudioContext(); // Make it crossbrowser
 					var gainNode = context.createGain();
 					gainNode.gain.value = 1; // set volume to 100%
-					var playButton = document.querySelector('#play');
+					var playButton = document.querySelector('#________ek1_link');
 					var yodelBuffer = void 0;
 
 					window.fetch(URL)
@@ -271,7 +266,7 @@
 			btndelay.addEventListener("click", function () {
 				setTimeout(function () {
 					location.replace("ipad_pro_11____4.html");
-				}, 3000);
+				}, 1000);
 			});
 		</script>
 		<script>
@@ -281,6 +276,7 @@
 			}
 		</script>
 		<!--end delay button-->
+		
 		<script>
 			document.getElementById("play").addEventListener("click", myFunction);
 			function myFunction() {
