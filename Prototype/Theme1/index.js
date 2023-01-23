@@ -2,6 +2,11 @@ window.onload = function () {
   document.getElementById("autoplay").play();
 }
 
+document.getElementById("play").addEventListener("click", myFunction);
+function myFunction() {
+  document.getElementById("play").disabled = true;
+}
+
 const $force = document.querySelectorAll('#force')[0]
 const $touches = document.querySelectorAll('#touches')[0]
 const canvas = document.querySelectorAll('canvas')[0]
@@ -17,6 +22,8 @@ let points = []
 canvas.width = window.innerWidth * 2
 canvas.height = window.innerHeight * 2
 
+
+
 const strokeHistory = []
 
 const requestIdleCallback = window.requestIdleCallback || function (fn) { setTimeout(fn, 1) };
@@ -27,7 +34,7 @@ const requestIdleCallback = window.requestIdleCallback || function (fn) { setTim
  * @return {void}
  */
 function drawOnCanvas(stroke) {
-  context.strokeStyle = 'black'
+  context.strokeStyle = 'grey'
   context.lineCap = 'round'
   context.lineJoin = 'round'
 
@@ -181,3 +188,4 @@ for (const ev of ['touchend', 'touchleave', 'mouseup']) {
     lineWidth = 0
   })
 };
+
