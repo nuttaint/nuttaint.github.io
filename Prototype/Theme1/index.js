@@ -1,3 +1,23 @@
+// const {
+//   createPool
+// } = request('mysql');
+
+// const pool = createPool({
+//   host: "localhost",
+//   user: "root",
+//   password: "",
+//   database: "test",
+//   connectionLimit: 10
+// })
+
+// pool.query(`select * from api where id = ?`, [], (err, result, fields) => {
+//   if (err) {
+//     return console.log(err);
+//   }
+//   return console.log(result);
+// })
+
+
 window.onload = function () {
   document.getElementById("autoplay").play();
 }
@@ -11,6 +31,9 @@ const $force = document.querySelectorAll('#force')[0]
 const $touches = document.querySelectorAll('#touches')[0]
 const canvas = document.querySelectorAll('canvas')[0]
 const context = canvas.getContext('2d')
+const $timestamp = document.querySelectorAll('#timestamp')[0]
+
+
 
 const array = Array();
 var x = 0;
@@ -23,7 +46,6 @@ canvas.width = window.innerWidth * 2
 canvas.height = window.innerHeight * 2
 
 
-
 const strokeHistory = []
 
 const requestIdleCallback = window.requestIdleCallback || function (fn) { setTimeout(fn, 1) };
@@ -34,7 +56,7 @@ const requestIdleCallback = window.requestIdleCallback || function (fn) { setTim
  * @return {void}
  */
 function drawOnCanvas(stroke) {
-  context.strokeStyle = 'grey'
+  context.strokeStyle = 'blue'
   context.lineCap = 'round'
   context.lineJoin = 'round'
 
@@ -130,14 +152,45 @@ for (const ev of ['touchmove', 'mousemove']) {
     drawOnCanvas(points);
 
     requestIdleCallback(() => {
-      $force.textContent = 'force = ' + pressure
-      document.getElementById("timestamp").innerHTML = 'Timestamp = ' + Date.now();
+
+
+      // var i = 1;                  //  set your counter to 1
+      // let text = "";
+      // let text2 = "";
+
+      // function myLoop() {         //  create a loop function
+      //   setTimeout(function () {   //  call a 3s setTimeout when the loop is called
+
+
+
+
+
+      $force.textContent += 'force = ' + pressure + " ";
+
+      // text += "Timestamp = " + Date.now() + "<br>";
+      // document.getElementById("timestamp").innerHTML = 'Timestamp = ' + Date.now();
+
+      //  your code here
+
+      // i++;                    //  increment the counter
+
+      // document.getElementById("timestamp").innerHTML = text;
+
+      // if (i < 5) {           //  if the counter < 10, call the loop function
+      //   myLoop();             //  ..  again which will trigger another 
+      // }                       //  ..  setTimeout()
+      //   }, 100)
+      // }
+
+      // myLoop();
+
+
 
 
       const touch = e.touches ? e.touches[0] : null
       if (touch) {
 
-        $touches.innerHTML = `
+        $touches.innerHTML += `
           touchType = ${touch.touchType} ${touch.touchType === 'direct' ? '👆' : '✍️'} <br/>
           radiusX = ${touch.radiusX} <br/>
           radiusY = ${touch.radiusY} <br/>
@@ -146,13 +199,13 @@ for (const ev of ['touchmove', 'mousemove']) {
           azimuthAngle = ${touch.azimuthAngle} <br/>
           
         `
-        array[x] = document.getElementById(Date.now()).value;
-        x++;
-        document.getElementById(Date.now()).value = "";
+        // array[x] = document.getElementById(Date.now()).value;
+        // x++;
+        // document.getElementById(Date.now()).value = "";
 
 
         function display_array() {
-          var h = "<hr/>";
+          var h = "<hr />";
 
           for (var y = 0; y < array.length; y++) {
             e += "Element " + y + " = " + array[y] + "<br/>";
