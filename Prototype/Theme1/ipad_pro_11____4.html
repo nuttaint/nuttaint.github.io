@@ -19,12 +19,16 @@
 			<div id="rectangle_1_ek3"></div>
 			<div id="rectangle_6_ek1"></div>
 			<div id="image_3_ek1"></div>
-			<div id="_2_1"></div>
+			<div id="rectangle_8_ek1">
+				<canvas id="canvas"></canvas>
+			</div>
+			<div id="_2_1">
+
+				<div id="touches"></div><br>
+			</div>
 			<div id="watermelon_1"></div>
 			<div id="carrot_1"></div>
-			<div id="rectangle_8_ek1">
-				<canvas id="canvas" width="935" height="230"></canvas>
-			</div>
+
 
 			<div id="nextnext">
 				<button id="_rectangle_4_ek1" class="next">ต่อไป</button>
@@ -93,6 +97,14 @@
 
 					background-color: #30d5d0;
 				}
+
+				canvas {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					left: 0;
+					bottom: 0;
+				}
 			</style>
 			<!-- copy here ปุ่มบังคับ -->
 
@@ -106,7 +118,7 @@
 		</div>
 		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/fabric@5.2.4/dist/fabric.min.js"></script>
-		<script src="main.js"></script>
+		<script src="index.js"></script>
 
 		<!--sound button-->
 		<script>
