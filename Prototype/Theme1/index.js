@@ -191,12 +191,12 @@ for (const ev of ['touchmove', 'mousemove']) {
       if (touch) {
 
         $touches.innerHTML += `
-          touchType = ${touch.touchType} ${touch.touchType === 'direct' ? '👆' : '✍️'} <br/>
-          radiusX = ${touch.radiusX} <br/>
-          radiusY = ${touch.radiusY} <br/>
-          rotationAngle = ${touch.rotationAngle} <br/>
-          altitudeAngle = ${touch.altitudeAngle} <br/>
-          azimuthAngle = ${touch.azimuthAngle} <br/>
+          touchType = ${touch.touchType} ${touch.touchType === 'direct' ? '👆' : '✍️'} 
+          radiusX = ${touch.radiusX} 
+          radiusY = ${touch.radiusY} 
+          rotationAngle = ${touch.rotationAngle} 
+          altitudeAngle = ${touch.altitudeAngle} 
+          azimuthAngle = ${touch.azimuthAngle} 
           
         `
         // array[x] = document.getElementById(Date.now()).value;
