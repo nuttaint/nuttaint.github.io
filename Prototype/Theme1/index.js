@@ -159,12 +159,12 @@ for (const ev of ['touchmove', 'mousemove']) {
 
       const touch = e.touches ? e.touches[0] : null
       if (touch) {
-        $force.textContent += 'F=' + pressure + " \n" + `al= ${touch.altitudeAngle} az= ${touch.azimuthAngle}`;
-        // $touches.innerHTML += `
-        //   al= ${touch.altitudeAngle} 
-        //   az= ${touch.azimuthAngle} 
-
-        // `
+        $force.textContent += 'F=' + pressure + " ";
+        $touches.innerHTML += `
+          al= ${touch.altitudeAngle} 
+          az= ${touch.azimuthAngle} 
+          
+        `
         // touchType = ${touch.touchType} ${touch.touchType === 'direct' ? '👆' : '✍️'} 
         // radiusX = ${touch.radiusX} 
         //   radiusY = ${touch.radiusY} 

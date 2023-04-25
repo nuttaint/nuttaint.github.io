@@ -104,8 +104,8 @@
 
 #result {
 	top: 710px;
-	left: 420px;
-	width: 400px;
+	left: 350px;
+	width: 250px;
 	height: 100px;
 	-ms-border-radius: 32px;
 	-o-border-radius: 32px;
@@ -115,6 +115,20 @@
 	border: 8px solid #00a323;
 	background: rgb(255, 255, 255);
 
+}
+
+#result2 {
+	top: 710px;
+	left: 640px;
+	width: 250px;
+	height: 100px;
+	-ms-border-radius: 32px;
+	-o-border-radius: 32px;
+	-moz-border-radius: 32px;
+	-webkit-border-radius: 32px;
+	border-radius: 32px;
+	border: 8px solid #00a323;
+	background: rgb(255, 255, 255);
 }
 
 #nextnext {
