@@ -135,12 +135,7 @@ for (const ev of ['touchmove', 'mousemove']) {
     drawOnCanvas(points);
 
     requestIdleCallback(() => {
-      $force.textContent += 'F=' + pressure + " ";
-      $touches.innerHTML += `
-          al= ${touch.altitudeAngle} 
-          az= ${touch.azimuthAngle} 
-          
-        `
+
 
       // text += "Timestamp = " + Date.now() + "<br>";
       // document.getElementById("timestamp").innerHTML = 'Timestamp = ' + Date.now();
@@ -162,25 +157,25 @@ for (const ev of ['touchmove', 'mousemove']) {
 
 
 
-      // const touch = e.touches ? e.touches[0] : null
-      // if (touch) {
-
-      //   $touches.innerHTML += `
-      //     al= ${touch.altitudeAngle} 
-      //     az= ${touch.azimuthAngle} 
-
-      //   `
-      // touchType = ${touch.touchType} ${touch.touchType === 'direct' ? '👆' : '✍️'} 
-      // radiusX = ${touch.radiusX} 
-      //   radiusY = ${touch.radiusY} 
-      //   rotationAngle = ${touch.rotationAngle} 
-      // array[x] = document.getElementById(Date.now()).value;
-      // x++;
-      // document.getElementById(Date.now()).value = "";
-
-
+      const touch = e.touches ? e.touches[0] : null
+      if (touch) {
+        $force.textContent += 'F=' + pressure + " ";
+        $touches.innerHTML += `
+          al= ${touch.altitudeAngle} 
+          az= ${touch.azimuthAngle} 
+          
+        `
+        // touchType = ${touch.touchType} ${touch.touchType === 'direct' ? '👆' : '✍️'} 
+        // radiusX = ${touch.radiusX} 
+        //   radiusY = ${touch.radiusY} 
+        //   rotationAngle = ${touch.rotationAngle} 
+        // array[x] = document.getElementById(Date.now()).value;
+        // x++;
+        // document.getElementById(Date.now()).value = "";
 
 
+
+      }
     })
   })
 }
