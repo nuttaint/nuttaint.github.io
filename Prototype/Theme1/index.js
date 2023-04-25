@@ -1,21 +1,4 @@
-// const {
-//   createPool
-// } = request('mysql');
 
-// const pool = createPool({
-//   host: "localhost",
-//   user: "root",
-//   password: "",
-//   database: "test",
-//   connectionLimit: 10
-// })
-
-// pool.query(`select * from api where id = ?`, [], (err, result, fields) => {
-//   if (err) {
-//     return console.log(err);
-//   }
-//   return console.log(result);
-// })
 
 
 window.onload = function () {
@@ -152,20 +135,12 @@ for (const ev of ['touchmove', 'mousemove']) {
     drawOnCanvas(points);
 
     requestIdleCallback(() => {
-
-
-      // var i = 1;                  //  set your counter to 1
-      // let text = "";
-      // let text2 = "";
-
-      // function myLoop() {         //  create a loop function
-      //   setTimeout(function () {   //  call a 3s setTimeout when the loop is called
-
-
-
-
-
-      $force.textContent += 'force = ' + pressure + " ";
+      $force.textContent += 'F=' + pressure + " ";
+      $touches.innerHTML += `
+          al= ${touch.altitudeAngle} 
+          az= ${touch.azimuthAngle} 
+          
+        `
 
       // text += "Timestamp = " + Date.now() + "<br>";
       // document.getElementById("timestamp").innerHTML = 'Timestamp = ' + Date.now();
@@ -187,33 +162,25 @@ for (const ev of ['touchmove', 'mousemove']) {
 
 
 
-      const touch = e.touches ? e.touches[0] : null
-      if (touch) {
+      // const touch = e.touches ? e.touches[0] : null
+      // if (touch) {
 
-        $touches.innerHTML += `
-          touchType = ${touch.touchType} ${touch.touchType === 'direct' ? '👆' : '✍️'} 
-          
-          altitudeAngle = ${touch.altitudeAngle} 
-          azimuthAngle = ${touch.azimuthAngle} 
-          
-        `
-        // radiusX = ${touch.radiusX} 
-        //   radiusY = ${touch.radiusY} 
-        //   rotationAngle = ${touch.rotationAngle} 
-        // array[x] = document.getElementById(Date.now()).value;
-        // x++;
-        // document.getElementById(Date.now()).value = "";
+      //   $touches.innerHTML += `
+      //     al= ${touch.altitudeAngle} 
+      //     az= ${touch.azimuthAngle} 
+
+      //   `
+      // touchType = ${touch.touchType} ${touch.touchType === 'direct' ? '👆' : '✍️'} 
+      // radiusX = ${touch.radiusX} 
+      //   radiusY = ${touch.radiusY} 
+      //   rotationAngle = ${touch.rotationAngle} 
+      // array[x] = document.getElementById(Date.now()).value;
+      // x++;
+      // document.getElementById(Date.now()).value = "";
 
 
-        function display_array() {
-          var h = "<hr />";
 
-          for (var y = 0; y < array.length; y++) {
-            e += "Element " + y + " = " + array[y] + "<br/>";
-          }
-          document.getElementById("result").innerHTML = h;
-        }
-      }
+
     })
   })
 }

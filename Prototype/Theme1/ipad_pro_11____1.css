@@ -34,6 +34,25 @@
 	border-radius: 15px;
 }
 
+.button3 {
+	display: inline-block;
+	padding: 4px 25px;
+	font-size: 33px;
+	font-family: 'caramello';
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background-color: #00c3ff;
+	border: none;
+	border-radius: 15px;
+}
+
+.text_sum {
+	margin-top: auto;
+}
+
 .button2:disabled {
 	display: inline-block;
 	padding: 4px 25px;
@@ -73,6 +92,25 @@
 	border-radius: 15px;
 	z-index: -3;
 	visibility: hidden;
+}
+
+#force {
+	font-size: 7px;
+}
+
+#result {
+	top: 710px;
+	left: 420px;
+	width: 400px;
+	height: 100px;
+	-ms-border-radius: 32px;
+	-o-border-radius: 32px;
+	-moz-border-radius: 32px;
+	-webkit-border-radius: 32px;
+	border-radius: 32px;
+	border: 8px solid #00a323;
+	background: rgb(255, 255, 255);
+
 }
 
 #nextnext {
@@ -124,6 +162,14 @@
 #play3 {
 	top: 735px;
 	left: 280px;
+	width: 200px;
+	height: 70px;
+	z-index: 1;
+}
+
+#play4 {
+	top: 735px;
+	left: 480px;
 	width: 200px;
 	height: 70px;
 	z-index: 1;
@@ -8343,12 +8389,23 @@ div {
 }
 
 
-#stawberrywithring_2 {
-	top: 501px !important;
+#stawberrywithring_2_octopus {
+	top: 550px !important;
 	position: absolute !important;
-	left: 823px;
-	width: 371px;
-	height: 333px;
+	left: 870px;
+	width: 270px;
+	height: 250px;
+	background: url(skins/octopus_2.png);
+	transform: rotate(345deg);
+	background-size: cover;
+}
+
+#stawberrywithring_2 {
+	top: 500px !important;
+	position: absolute !important;
+	left: 800px;
+	width: 370px;
+	height: 330px;
 	background: url(skins/stawberrywithring_2.png);
 	background-size: cover;
 }
