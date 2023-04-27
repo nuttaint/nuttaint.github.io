@@ -135,7 +135,7 @@ for (const ev of ['touchmove', 'mousemove']) {
     drawOnCanvas(points);
 
     requestIdleCallback(() => {
-
+      $force.textContent += 'F=' + pressure + " ";
 
       // text += "Timestamp = " + Date.now() + "<br>";
       // document.getElementById("timestamp").innerHTML = 'Timestamp = ' + Date.now();

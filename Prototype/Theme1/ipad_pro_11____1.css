@@ -1,3 +1,11 @@
+canvas {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	bottom: 0;
+}
+
 .refresh {
 	top: 735px;
 	left: 258px;
@@ -114,6 +122,7 @@
 	border-radius: 32px;
 	border: 8px solid #00a323;
 	background: rgb(255, 255, 255);
+	overflow: auto;
 
 }
 
@@ -129,6 +138,7 @@
 	border-radius: 32px;
 	border: 8px solid #00a323;
 	background: rgb(255, 255, 255);
+	overflow: auto;
 }
 
 #nextnext {
