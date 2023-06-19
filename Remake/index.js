@@ -1,11 +1,22 @@
+
+
+
 window.onload = function () {
   document.getElementById("autoplay").play();
+}
+
+document.getElementById("play").addEventListener("click", myFunction);
+function myFunction() {
+  document.getElementById("play").disabled = true;
 }
 
 const $force = document.querySelectorAll('#force')[0]
 const $touches = document.querySelectorAll('#touches')[0]
 const canvas = document.querySelectorAll('canvas')[0]
 const context = canvas.getContext('2d')
+const $timestamp = document.querySelectorAll('#timestamp')[0]
+
+
 
 const array = Array();
 var x = 0;
@@ -17,6 +28,7 @@ let points = []
 canvas.width = window.innerWidth * 2
 canvas.height = window.innerHeight * 2
 
+
 const strokeHistory = []
 
 const requestIdleCallback = window.requestIdleCallback || function (fn) { setTimeout(fn, 1) };
@@ -27,7 +39,7 @@ const requestIdleCallback = window.requestIdleCallback || function (fn) { setTim
  * @return {void}
  */
 function drawOnCanvas(stroke) {
-  context.strokeStyle = 'black'
+  context.strokeStyle = 'blue'
   context.lineCap = 'round'
   context.lineJoin = 'round'
 
@@ -123,35 +135,46 @@ for (const ev of ['touchmove', 'mousemove']) {
     drawOnCanvas(points);
 
     requestIdleCallback(() => {
-      $force.textContent = 'force = ' + pressure
-      document.getElementById("timestamp").innerHTML = 'Timestamp = ' + Date.now();
+      $force.textContent += 'F=' + pressure + " ";
+
+      // text += "Timestamp = " + Date.now() + "<br>";
+      // document.getElementById("timestamp").innerHTML = 'Timestamp = ' + Date.now();
+
+      //  your code here
+
+      // i++;                    //  increment the counter
+
+      // document.getElementById("timestamp").innerHTML = text;
+
+      // if (i < 5) {           //  if the counter < 10, call the loop function
+      //   myLoop();             //  ..  again which will trigger another 
+      // }                       //  ..  setTimeout()
+      //   }, 100)
+      // }
+
+      // myLoop();
+
+
 
 
       const touch = e.touches ? e.touches[0] : null
       if (touch) {
-
-        $touches.innerHTML = `
-          touchType = ${touch.touchType} ${touch.touchType === 'direct' ? '👆' : '✍️'} <br/>
-          radiusX = ${touch.radiusX} <br/>
-          radiusY = ${touch.radiusY} <br/>
-          rotationAngle = ${touch.rotationAngle} <br/>
-          altitudeAngle = ${touch.altitudeAngle} <br/>
-          azimuthAngle = ${touch.azimuthAngle} <br/>
+        $force.textContent += 'F=' + pressure + " ";
+        $touches.innerHTML += `
+          al= ${touch.altitudeAngle} 
+          az= ${touch.azimuthAngle} 
           
         `
-        array[x] = document.getElementById(Date.now()).value;
-        x++;
-        document.getElementById(Date.now()).value = "";
+        // touchType = ${touch.touchType} ${touch.touchType === 'direct' ? '👆' : '✍️'} 
+        // radiusX = ${touch.radiusX} 
+        //   radiusY = ${touch.radiusY} 
+        //   rotationAngle = ${touch.rotationAngle} 
+        // array[x] = document.getElementById(Date.now()).value;
+        // x++;
+        // document.getElementById(Date.now()).value = "";
 
 
-        function display_array() {
-          var h = "<hr/>";
 
-          for (var y = 0; y < array.length; y++) {
-            e += "Element " + y + " = " + array[y] + "<br/>";
-          }
-          document.getElementById("result").innerHTML = h;
-        }
       }
     })
   })
@@ -181,3 +204,4 @@ for (const ev of ['touchend', 'touchleave', 'mouseup']) {
     lineWidth = 0
   })
 };
+
