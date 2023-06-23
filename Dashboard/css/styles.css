@@ -178,7 +178,11 @@ body {
 
 .charts {
   gap: 10px;
-  margin-top: 55px;
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin: 20px 0;
 }
 
 .charts-card {
@@ -213,6 +217,7 @@ body {
   width: 1070px;
   border: 2px solid gray;
   margin: 10px;
+  margin-top: 40px;
 }
 
 /* .img1 {
@@ -282,6 +287,7 @@ body {
   .charts {
     grid-template-columns: 1fr;
     margin-top: 30px;
+    justify-content: center;
   }
 }
 
@@ -379,7 +385,7 @@ body {
   --p: 20;
   --b: 30px;
   --c: darkred;
-  --w: 300px;
+  --w: 220px;
 
   width: var(--w);
   aspect-ratio: 1;
@@ -390,8 +396,8 @@ body {
   font-size: 25px;
   font-weight: bold;
   font-family: sans-serif;
-  left: 100px;
-  top: -150px;
+  left: 10px;
+  top: 20px;
   text-align: center;
 }
 
