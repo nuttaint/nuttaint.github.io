@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <!-- Montserrat Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+    <div class="grid-container">
+
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <div class="sidebar-title">
+                <div class="sidebar-brand">
+                    <div class="dropdown">
+                        <button class="dropdown-btn">
+                            <span class="material-icons">person</span> Alex
+                            <span class="arrow"></span>
+                        </button>
+                        <ul class="dropdown-content">
+                            <li style="--delay: 1;"><a href="alex_left_to_right.html">LeftToRight</a></li>
+                            <li style="--delay: 2;"><a href="alex_right_to_left.html">RightToLeft</a></li>
+                            <li style="--delay: 3;"><a href="alex_top_to_bottom.html">TopToBottom</a></li>
+                            <li style="--delay: 4;"><a href="alex_bottom_to_top.html">BottomToTop</a></li>
+                            <li style="--delay: 5;"><a href="alex_lefttop_to_bottomright.html">LeftTopToBottomRight</a>
+                            </li>
+                            <li style="--delay: 6;"><a href="alex_rightbottom_to_lefttop.html">RightBottomToLeftTop</a>
+                            </li>
+                            <li style="--delay: 7;"><a href="alex_curve.html">Curve_LeftToRight</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <span> onclick="closeSidebar()">close</span>
+            </div>
+
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <a href="index.html">
+                        <span></span>Alex
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="jame.html">
+                        <span></span>Jame
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <!-- End Sidebar -->
+
+        <!-- Main -->
+        <main class="main-container">
+            <div class="main-title">
+                <h2>DASHBOARD</h2>
+            </div>
+
+            <div class="line"></div>
+            <div class="title">Error_StrightLine_LeftToRight</div>
+
+            <div class="main-cards">
+
+                <div class="card">
+                    <div class="card-inner">
+                        <h4>FORCE <br> <br>AVG = 0.135 <br>
+                            SD = 0.025</h4>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-inner">
+                        <h4>Correct<br> <br>AVG = 1.136<br>
+                            SD = 0.1</h4>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-inner">
+                        <h4>TIME <br><br>
+
+                            4.02 sec</h4>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-inner">
+                        <h4>ERROR <br>
+                            <br>No Error
+                        </h4>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="charts">
+
+                <img src="/images/Force_error.png" width="600px" height="auto" alt="">
+
+
+            </div>
+
+
+        </main>
+        <!-- End Main -->
+
+    </div>
+
+    <!-- Scripts -->
+    <!-- ApexCharts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

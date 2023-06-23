@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <!-- Montserrat Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+
+    <div class="grid-container">
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <div class="sidebar-title">
+                <div class="sidebar-brand">
+                    <span class=""></span> Alex_Error_StrightLine_LeftToRight
+                </div>
+                <span> onclick="closeSidebar()">close</span>
+            </div>
+
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <a href="index.html">
+                        <span></span>StrightLine_LeftToRight
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="#">
+                        <span></span>StrightLine_RightToLeft
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="#">
+                        <span></span>StrightLine_BottomToTop
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="#">
+                        <span></span>StrightLine_TopToBottom
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="#">
+                        <span></span>StrightLine_TopLeftToBottomRight
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="#">
+                        <span></span>StrightLine_RightBottomToLeftTop
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="#">
+                        <span></span> Curve_LeftToRight
+                    </a>
+                </li>
+                <li class="sidebar-list-item" href="error.html">
+                    <a href="error.html">
+                        <span></span> Error_StrightLine_LeftToRight
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <!-- End Sidebar -->
+
+        <!-- Main -->
+        <main class="main-container">
+            <div class="main-title">
+                <h2>DASHBOARD</h2>
+            </div>
+
+            <div class="main-cards">
+
+                <div class="card">
+                    <div class="card-inner">
+                        <h4>FORCE <br> <br>AVG = 0.41 <br>
+                            SD = 0.309</h4>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-inner">
+                        <h4>Correct<br> <br>AVG = 55.176<br>
+                            SD = 38.534</h4>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-inner">
+                        <h4>TIME <br><br>
+
+                            6.62 sec</h4>
+                    </div>
+                </div>
+
+                <!-- <div class="card">
+                    <div class="card-inner">
+                        <h4>Error <br>
+
+                            #ลงน้ำหนักไม่สม่ำเสมอ <br>
+                            #ขีดเส้นไม่ตรง <br>
+                            #ลงน้ำหนักไม่สม่ำเสมอ
+
+                        </h4>
+                    </div>
+                </div> -->
+
+            </div>
+
+            <div class="charts">
+
+                <img src="/images/Force_error.png" width="500px" height="auto" alt="">
+
+
+                <img src="/images/Altitude_error.png" width="500px" height="auto" alt="">
+                <br>
+
+                <img src="/images/Azimuth_error.png" width="500px" height="auto" alt="">
+
+            </div>
+        </main>
+        <!-- End Main -->
+
+    </div>
+
+    <!-- Scripts -->
+    <!-- ApexCharts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

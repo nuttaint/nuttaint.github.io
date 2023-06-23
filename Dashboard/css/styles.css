@@ -1,0 +1,436 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+}
+
+.material-icons-outlined {
+  vertical-align: middle;
+  line-height: 1px;
+  font-size: 35px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 350px 1fr 1fr 1fr;
+  grid-template-rows: 0.05fr 3fr;
+  grid-template-areas:
+    "sidebar header header header"
+    "sidebar main main main";
+  height: 100vh;
+}
+
+/* ---------- HEADER ---------- */
+.header {
+  grid-area: header;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px 0 30px;
+  box-shadow: 0 6px 7px -3px rgba(0, 0, 0, 0.35);
+}
+
+.menu-icon {
+  display: none;
+}
+
+
+
+/* ---------- SIDEBAR ---------- */
+
+#sidebar {
+  grid-area: sidebar;
+  height: 100%;
+  background-color: #28272f;
+  overflow-y: auto;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.sidebar-title {
+  display: flex;
+  background-color: #1d1c22;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 30px 30px 30px;
+  margin-bottom: 5px;
+}
+
+.sidebar-title>span {
+  display: none;
+}
+
+.sidebar-brand {
+  margin-top: 15px;
+  margin-left: 20px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.sidebar-list {
+  padding: 0;
+  margin-top: 10px;
+  list-style-type: none;
+}
+
+.sidebar-list-item {
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 20px 20px 20px 20px;
+  font-size: 18px;
+  transition: background-color 0.5s;
+}
+
+.sidebar-list-item:hover {
+  background-color: #1d1c22;
+  cursor: pointer;
+}
+
+.sidebar-list-item>a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.sidebar-responsive {
+  display: inline !important;
+  position: absolute;
+  /*
+    the z-index of the ApexCharts is 11
+    we want the z-index of the sidebar higher so that
+    the charts are not showing over the sidebar 
+    on small screens
+  */
+  z-index: 12 !important;
+}
+
+
+/* ---------- MAIN ---------- */
+
+.main-container {
+  grid-area: main;
+  overflow-y: auto;
+  padding: 20px 20px;
+  color: rgba(52, 52, 52, 0.95);
+}
+
+.main-title {
+  margin-left: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  margin-left: 10px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: #3e3b3b;
+  font-size: 24px;
+}
+
+.main-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.card {
+  height: 80px;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.5);
+}
+
+.card:first-child {
+  background-color: #4a76f0;
+}
+
+.card:nth-child(2) {
+  background-color: #fd923f;
+}
+
+.card:nth-child(3) {
+  background-color: #30bc37;
+}
+
+.card:nth-child(4) {
+  background-color: #e03b3b;
+}
+
+.card-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.card-inner>.material-icons-outlined {
+  font-size: 45px;
+}
+
+.charts {
+  gap: 10px;
+  margin-top: 55px;
+}
+
+.charts-card {
+  background-color: #a19292;
+  margin-top: 20px;
+  padding: 10px;
+  width: 950px;
+  height: 300px;
+  -webkit-column-break-inside: avoid;
+  border-radius: 20px;
+  box-shadow: 0 6px 7px -4px rgba(0, 0, 0.5, 0.5);
+}
+
+.charts-card2 {
+  background-color: #a19292;
+  margin-top: 20px;
+  padding: 10px;
+  width: 1000px;
+  height: 300px;
+  -webkit-column-break-inside: avoid;
+  border-radius: 20px;
+  box-shadow: 0 6px 7px -4px rgba(0, 0, 0.5, 0.5);
+}
+
+.chart-title {
+  display: flex;
+  align-items: top;
+  justify-content: center;
+}
+
+.line {
+  width: 1070px;
+  border: 2px solid gray;
+  margin: 10px;
+}
+
+/* .img1 {
+  position: relative;
+  background-image: url(/images/Force.png);
+  background-size: cover;
+  width: 950px;
+  height: 210px;
+  justify-content: center;
+}
+
+.img2 {
+  position: relative;
+  background-image: url(/images/Altitude.png);
+  background-size: cover;
+  width: 950px;
+  height: 210px;
+  justify-content: center;
+}
+
+.img3 {
+  position: relative;
+  background-image: url(/images/Azimuth.png);
+  background-size: cover;
+  width: 1000px;
+  height: 210px;
+  justify-content: center;
+} */
+
+
+/* ---------- MEDIA QUERIES ---------- */
+
+/* Medium <= 992px */
+
+@media screen and (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas:
+      "header"
+      "main";
+  }
+
+  #sidebar {
+    display: none;
+  }
+
+  .menu-icon {
+    display: inline;
+  }
+
+  .sidebar-title>span {
+    display: inline;
+  }
+}
+
+
+/* Small <= 768px */
+
+@media screen and (max-width: 768px) {
+  .main-cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+
+  .charts {
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+  }
+}
+
+
+/* Extra Small <= 576px */
+
+@media screen and (max-width: 576px) {
+  .hedaer-left {
+    display: none;
+  }
+}
+
+.dropdown {
+  max-width: 13em;
+  margin: 0px;
+  position: relative;
+  width: 100%;
+}
+
+.dropdown-btn {
+  background: #1d1f24;
+  font-size: 21px;
+  width: 100%;
+  border: none;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  margin-left: -20px;
+}
+
+.arrow {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #fff;
+  transition: transform ease-in-out 0.3s;
+  margin-left: 8px;
+}
+
+.dropdown-content {
+  list-style: none;
+  position: absolute;
+  top: 20px;
+  width: 210px;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.dropdown-content li {
+  background: #2f3238;
+  border-radius: 0.5em;
+  position: relative;
+  left: 100%;
+  transition: 0.5s;
+  font-size: 16px;
+  margin-left: 0px;
+  z-index: 0;
+
+  transition-delay: calc(60ms * var(--delay));
+
+}
+
+.dropdown-content li:hover {
+  background: #1d1f24;
+}
+
+.dropdown-content li a {
+  display: block;
+  padding: 0.7em 0.5em;
+  color: #fff;
+  margin: 0.1em 0;
+  text-decoration: none;
+}
+
+.dropdown-btn:focus+.dropdown-content {
+  visibility: visible;
+}
+
+.dropdown-btn:focus>.arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-btn:focus+.dropdown-content li {
+  left: 0;
+}
+
+@property --p {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 1;
+}
+
+.pie {
+  --p: 20;
+  --b: 30px;
+  --c: darkred;
+  --w: 300px;
+
+  width: var(--w);
+  aspect-ratio: 1;
+  position: relative;
+  display: inline-grid;
+  margin: 0px;
+  place-content: center;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: sans-serif;
+  left: 100px;
+  top: -150px;
+  text-align: center;
+}
+
+.pie:before,
+.pie:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.pie:before {
+  inset: 0;
+  background:
+    radial-gradient(farthest-side, var(--c) 98%, #0000) top/var(--b) var(--b) no-repeat,
+    conic-gradient(var(--c) calc(var(--p)*1%), #0000 0);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
+  mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
+}
+
+.pie:after {
+  inset: calc(50% - var(--b)/2);
+  background: var(--c);
+  transform: rotate(calc(var(--p)*3.6deg)) translateY(calc(50% - var(--w)/2));
+}
+
+.animate {
+  animation: p 1.5s .5s both;
+}
+
+.no-round:before {
+  background-size: 0 0, auto;
+}
+
+.no-round:after {
+  content: none;
+}
+
+@keyframes p {
+  from {
+    --p: 0
+  }
+}
