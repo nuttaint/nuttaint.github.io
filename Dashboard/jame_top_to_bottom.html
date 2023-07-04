@@ -17,6 +17,14 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Select2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Select2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 </head>
 
 <body>
@@ -24,6 +32,21 @@
 
         <!-- Sidebar -->
         <aside id="sidebar">
+
+            <!-- searchDropdown -->
+            <div class="sidebar-head">
+                <select id='selUser' style='width: 86%;'>
+                    <option value='0'>-Select User-</option>
+                    <option value='1'>Alex</option>
+                    <option value='2'>Jame</option>
+                </select>
+
+                <button class="search" id='but_read'>
+                    <span class="material-icons" style="font-size: 20px;">search</span>
+                </button>
+            </div>
+            <!-- ENDsearchDropdown -->
+
             <div class="sidebar-title">
                 <div class="sidebar-brand">
                     <div class="dropdown">
@@ -49,7 +72,7 @@
 
             <ul class="sidebar-list">
                 <li class="sidebar-list-item">
-                    <a href="index.html">
+                    <a href="alex.html">
                         <span></span>Alex
                     </a>
                 </li>
@@ -70,7 +93,7 @@
 
             <div class="line"></div>
 
-            <div class="title">StrightLine_TopToBottom</div>
+            <div class="title">StrightLine Top To Bottom</div>
 
             <div class="main-cards">
 
@@ -99,7 +122,7 @@
                 <div class="card">
                     <div class="card-inner">
                         <h4>ERROR <br> <br>
-                            Error</h4>
+                            ยกปากกา</h4>
                     </div>
                 </div>
 
@@ -123,7 +146,7 @@
     <!-- ApexCharts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
     <!-- Custom JS -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>
