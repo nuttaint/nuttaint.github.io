@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Admin Dashboard</title>
+
+  <!-- Montserrat Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- Select2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Select2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+
+</head>
+
+<body>
+  <div class="grid-container">
+    <!-- Sidebar -->
+    <aside id="sidebar">
+
+      <!-- searchDropdown -->
+      <div class="sidebar-head">
+        <select id='selUser' style='width: 86%;'>
+          <option value='0'>-Select User-</option>
+          <option value='1'>alex</option>
+          <option value='2'>jame</option>
+          <option value='3'>New</option>
+        </select>
+
+        <button class="search" id='but_read'>
+          <span class="material-icons" style="font-size: 20px;">search</span>
+        </button>
+      </div>
+      <!-- ENDsearchDropdown -->
+
+      <div class="sidebar-title">
+        <div class="sidebar-brand">
+          <div class="dropdown">
+            <button class="dropdown-btn">
+              <span class="material-icons">person</span> New
+              <span class="arrow"></span>
+            </button>
+
+            <ul class="dropdown-content">
+              <li style="--delay: 1;"><a href="New_left_to_right.html">LeftToRight</a></li>
+              <li style="--delay: 2;"><a href="New_right_to_left.html">RightToLeft</a></li>
+              <li style="--delay: 3;"><a href="New_top_to_bottom.html">TopToBottom</a></li>
+              <li style="--delay: 4;"><a href="New_bottom_to_top.html">BottomToTop</a></li>
+            </ul>
+          </div>
+
+        </div>
+        <span> onclick="closeSidebar()">close</span>
+      </div>
+
+      <ul class="sidebar-list">
+        <li class="sidebar-list-item">
+          <a href="alex.html">
+            <span></span>Alex
+          </a>
+        </li>
+        <li class="sidebar-list-item">
+          <a href="jame.html">
+            <span></span>Jame
+          </a>
+        </li>
+        <li class="sidebar-list-item">
+          <a href="New.html">
+            <span></span>New
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <!-- End Sidebar -->
+
+    <!-- Main -->
+    <main class="main-container">
+      <div class="main-title">
+        <h2>DASHBOARD</h2>
+      </div>
+
+      <div class="line"></div>
+
+      <div class="title">StrightLine_BottomToTop</div>
+
+      <div class="main-cards">
+
+        <div class="card">
+          <div class="card-inner">
+            <h4>FORCE <br> <br>AVG = 0.186 <br>
+              SD = 0.053</h4>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <h4>Correct<br><br>AVG = 4.124<br>
+              SD = 1.543</h4>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <h4>TIME <br><br>
+
+              3.68 sec</h4>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <h4>ERROR <br>
+              <br>ลากเส้นเกิน
+            </h4>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="charts">
+
+        <img src="./images/New4.png" width="370px" height="auto" alt="">
+        <img src="./images/New_ECD4.png" width="370px" height="auto" alt="">
+        <div class="pie animate" style="--p:78;--c:lightgreen">Correct <br> 78%</div>
+
+      </div>
+
+
+
+      <div class="line"></div>
+
+
+
+    </main>
+    <!-- End Main -->
+
+  </div>
+
+  <!-- Scripts -->
+  <!-- ApexCharts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>
