@@ -37,8 +37,8 @@
             <div class="sidebar-head">
                 <select id='selUser' style='width: 86%;'>
                     <option value='0'>-Select User-</option>
-                    <option value='1'>Alex</option>
-                    <option value='2'>Jame</option>
+                    <option value='1'>alex</option>
+                    <option value='2'>jame</option>
                     <option value='3'>New</option>
                 </select>
 
@@ -50,22 +50,22 @@
 
             <div class="sidebar-title">
                 <div class="sidebar-brand">
-                    <div class="dropdown">
-                        <button class="dropdown-btn">
-                            <span class="material-icons">person</span> Jame
-                            <span class="arrow"></span>
+                    Jame
+                    <br>
+                    <div class="selectline">
+                        <select id="selLine" style="width: 75%;">
+                            <option value='0'>-Select Line-</option>
+                            <option value='1'>jame_left_to_right</option>
+                            <option value='2'>jame_right_to_left</option>
+                            <option value='3'>jame_top_to_bottom</option>
+                            <option value='4'>jame_bottom_to_top</option>
+                            <option value='5'>jame_lefttop_to_bottomright</option>
+                            <option value='6'>jame_rightbottom_to_lefttop</option>
+                            <option value='7'>jame_curve</option>
+                        </select>
+                        <button class="search" id='but_line'>
+                            <span class="material-icons" style="font-size: 20px;">search</span>
                         </button>
-                        <ul class="dropdown-content">
-                            <li style="--delay: 1;"><a href="jame_left_to_right.html">LeftToRight</a></li>
-                            <li style="--delay: 2;"><a href="jame_right_to_left.html">RightToLeft</a></li>
-                            <li style="--delay: 3;"><a href="jame_top_to_bottom.html">TopToBottom</a></li>
-                            <li style="--delay: 4;"><a href="jame_bottom_to_top.html">BottomToTop</a></li>
-                            <li style="--delay: 5;"><a href="jame_lefttop_to_bottomright.html">LeftTopToBottomRight</a>
-                            </li>
-                            <li style="--delay: 6;"><a href="jame_rightbottom_to_lefttop.html">RightBottomToLeftTop</a>
-                            </li>
-                            <li style="--delay: 7;"><a href="jame_curve.html">Curve_LeftToRight</a></li>
-                        </ul>
                     </div>
                 </div>
                 <span> onclick="closeSidebar()">close</span>
@@ -84,7 +84,7 @@
                 </li>
                 <li class="sidebar-list-item">
                     <a href="New.html">
-                      <span></span>New
+                        <span></span>New
                     </a>
                 </li>
             </ul>
