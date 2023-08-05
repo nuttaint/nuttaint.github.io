@@ -215,7 +215,6 @@ function sendDrawingDataToServer(points) {
     body: JSON.stringify({
       x: points.map(point => point.x),
       y: points.map(point => point.y),
-      angle: points.map(point => point.angle), // Assuming you have angle data for each point
       lineWidth: points.map(point => point.lineWidth),
     }),
   })
