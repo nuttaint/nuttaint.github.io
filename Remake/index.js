@@ -205,24 +205,27 @@ for (const ev of ['touchend', 'touchleave', 'mouseup']) {
   })
 };
 
+
 function sendDrawingDataToServer(points) {
-  // Assuming you are using fetch or an HTTP library like Axios
+  const requestBody = {
+    x: points.map(point => point.x),
+    y: points.map(point => point.y),
+    lineWidth: points.map(point => point.lineWidth),
+  };
+
   fetch('/api/saveDrawing', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({
-      x: points.map(point => point.x),
-      y: points.map(point => point.y),
-      lineWidth: points.map(point => point.lineWidth),
-    }),
+    body: JSON.stringify(requestBody),
   })
-    .then((response) => response.json())
-    .then((data) => {
+    .then(response => response.json())
+    .then(data => {
       console.log('Drawing data saved on the server:', data);
     })
-    .catch((error) => {
+    .catch(error => {
       console.error('Failed to save drawing data:', error);
     });
 }
+
