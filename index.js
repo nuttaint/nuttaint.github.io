@@ -126,10 +126,8 @@ for (const ev of ['touchmove', 'mousemove']) {
       $force.textContent = 'force = ' + pressure
       document.getElementById("timestamp").innerHTML = 'Timestamp = ' + Date.now();
 
-
       const touch = e.touches ? e.touches[0] : null
       if (touch) {
-
         $touches.innerHTML = `
           touchType = ${touch.touchType} ${touch.touchType === 'direct' ? '👆' : '✍️'} <br/>
           radiusX = ${touch.radiusX} <br/>
@@ -137,24 +135,23 @@ for (const ev of ['touchmove', 'mousemove']) {
           rotationAngle = ${touch.rotationAngle} <br/>
           altitudeAngle = ${touch.altitudeAngle} <br/>
           azimuthAngle = ${touch.azimuthAngle} <br/>
-          
-        `
+        `;
+
         array[x] = document.getElementById(Date.now()).value;
         x++;
         document.getElementById(Date.now()).value = "";
-
-
-        function display_array() {
-          var h = "<hr/>";
-
-          for (var y = 0; y < array.length; y++) {
-            e += "Element " + y + " = " + array[y] + "<br/>";
-          }
-          document.getElementById("result").innerHTML = h;
-        }
       }
-    })
-  })
+    });
+  });
+}
+
+function display_array() {
+  var htmlString = "<hr/>";
+
+  for (var y = 0; y < array.length; y++) {
+    htmlString += "Element " + y + " = " + array[y] + "<br/>";
+  }
+  document.getElementById("result").innerHTML = htmlString;
 }
 
 for (const ev of ['touchend', 'touchleave', 'mouseup']) {
@@ -179,5 +176,5 @@ for (const ev of ['touchend', 'touchleave', 'mouseup']) {
     requestIdleCallback(function () { strokeHistory.push([...points]); points = [] })
 
     lineWidth = 0
-  })
-};
+  });
+}
