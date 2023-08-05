@@ -1,5 +1,3 @@
-// server.js
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const { MongoClient } = require('mongodb');
@@ -14,10 +12,13 @@ app.use(bodyParser.json());
 app.post('/api/saveDrawing', (req, res) => {
   const touchData = req.body; // Assuming the touch data is sent in the request body
 
-  // Connect to MongoDB (assuming it's running locally on default port 27017)
-  MongoClient.connect('mongodb://localhost:27017', (err, client) => {
+  // Replace the connection string with your MongoDB Atlas connection string
+  const atlasConnectionString = 'mongodb+srv://vaneevan2001:tUIXBL2htACBSSV7@Coding/<database-name>ipad?retryWrites=true&w=majority';
+
+  // Connect to MongoDB Atlas
+  MongoClient.connect(atlasConnectionString, (err, client) => {
     if (err) {
-      console.error('Failed to connect to MongoDB:', err);
+      console.error('Failed to connect to MongoDB Atlas:', err);
       return res.status(500).json({ error: 'Failed to connect to the database.' });
     }
 
