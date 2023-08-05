@@ -5,7 +5,7 @@ const app = express();
 const port = 3000;
 
 // Connect to MongoDB using the provided connection string
-mongoose.connect('mongodb+srv://vaneevan2001:tUIXBL2htACBSSV7@coding.cssu0dx.mongodb.net/ipad?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://vaneevan2001:tUIXBL2htACBSSV7@Coding.cssu0dx.mongodb.net/ipad?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -14,7 +14,6 @@ mongoose.connect('mongodb+srv://vaneevan2001:tUIXBL2htACBSSV7@coding.cssu0dx.mon
 const drawingSchema = new mongoose.Schema({
   x: [Number],
   y: [Number],
-  angle: [Number],
   lineWidth: [Number],
 });
 
@@ -25,26 +24,24 @@ const Drawing = mongoose.model('Drawing', drawingSchema);
 app.use(express.json());
 
 // Endpoint to receive and save drawing data to MongoDB
-app.post('/api/saveDrawing', (req, res) => {
-  const { x, y, angle, lineWidth } = req.body;
+app.post('/api/saveDrawing', async (req, res) => {
+  const { x, y, lineWidth } = req.body;
 
   // Create a new drawing instance
   const newDrawing = new Drawing({
     x: x,
     y: y,
-    angle: angle,
     lineWidth: lineWidth,
   });
 
-  // Save the drawing data to the database
-  newDrawing.save((err, savedDrawing) => {
-    if (err) {
-      console.error(err);
-      res.status(500).json({ error: 'Failed to save drawing data.' });
-    } else {
-      res.json(savedDrawing);
-    }
-  });
+  try {
+    // Save the drawing data to the database
+    const savedDrawing = await newDrawing.save();
+    res.json(savedDrawing);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to save drawing data.' });
+  }
 });
 
 // Start the server
