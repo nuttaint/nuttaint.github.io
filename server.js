@@ -13,7 +13,7 @@ app.post('/api/saveDrawing', (req, res) => {
   const touchData = req.body; // Assuming the touch data is sent in the request body
 
   // Replace the connection string with your MongoDB Atlas connection string
-  const atlasConnectionString = 'mongodb+srv://vaneevan2001:tUIXBL2htACBSSV7@Coding/<database-name>ipad?retryWrites=true&w=majority';
+  const atlasConnectionString = 'mongodb+srv://vaneevan2001:tUIXBL2htACBSSV7@Coding/ipad?retryWrites=true&w=majority';
 
   // Connect to MongoDB Atlas
   MongoClient.connect(atlasConnectionString, (err, client) => {
