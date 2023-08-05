@@ -15,7 +15,7 @@ app.post('/api/saveDrawing', (req, res) => {
   const touchData = req.body; // Assuming the touch data is sent in the request body
 
   // Connect to MongoDB (assuming it's running locally on default port 27017)
-  MongoClient.connect('mongodb://localhost:3000', (err, client) => {
+  MongoClient.connect('mongodb://localhost:27017', (err, client) => {
     if (err) {
       console.error('Failed to connect to MongoDB:', err);
       return res.status(500).json({ error: 'Failed to connect to the database.' });
