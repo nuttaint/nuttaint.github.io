@@ -5,6 +5,9 @@ const fabricCanvas = new fabric.Canvas('canvas', { isDrawingMode: false });
 const currentPageName = window.location.pathname.split('/').pop();
 fabricCanvas.setBackgroundImage('', fabricCanvas.renderAll.bind(fabricCanvas));
 let lineCount = 1; // Initialize the line count
+let rotationAngle = 0;
+let altitudeAngle = 0;
+let azimuthAngle =  0;
 var user = localStorage.getItem('username');
 localStorage.setItem('beforeX', 0);
 localStorage.setItem('beforeY', 0);
@@ -223,9 +226,9 @@ function sendDataToServer(numTouches) {
   // Convert the points object into an array of objects with additional touch parameters
   const touchDataArrayWithParameters = strokeHistory.flat().map(point => ({
     ...point,
-    rotationAngle: 0,
-    altitudeAngle: 0,
-    azimuthAngle: 0,
+    rotationAngle: rotationAngle ||  0,
+    altitudeAngle: altitudeAngle || 0,
+    azimuthAngle:  azimuthAngle || 0,
     currentPageName: currentPageName,
     lineCount: lineCount,
     timestamp: formattedTimestamp,
