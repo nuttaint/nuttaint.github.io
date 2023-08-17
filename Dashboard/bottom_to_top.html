@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <!-- Montserrat Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Select2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Select2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+</head>
+
+<body>
+    <div class="grid-container">
+
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <!-- searchDropdown -->
+            <div class="sidebar-head">
+                <select id="selUser" style="width: 86%;">
+                    <option value="0">-Select User-</option>
+                  </select>
+              
+                  <button class="search" id="but_read">
+                    <span class="material-icons" style="font-size: 20px;">search</span>
+                  </button>
+                </div>
+         <script src="index.js"></script>
+            <!-- ENDsearchDropdown -->
+            <div class="sidebar-title">
+                <div class="sidebar-brand" id="userDisplay">
+                    -Select User-
+                </div>
+            </div>
+                    <br>
+                    <div class="selectline">
+                        <select id="selLine" style="width: 75%;">
+                            <option value="0">-Select Line-</option>
+                            <!-- Options will be dynamically populated using JavaScript -->
+                        </select>
+                        <button class="search" id="but_line">
+                            <span class="material-icons" style="font-size: 20px;">search</span>
+                        </button>
+                    </div>                    
+            <script src="page.js"></script>
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <a href="alex.html">
+                        <span></span>Alex
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="jame.html">
+                        <span></span>Jame
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="New.html">
+                        <span></span>New
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <!-- End Sidebar -->
+
+        <!-- Main -->
+        <main class="main-container">
+            <div class="main-title">
+                <h2>DASHBOARD</h2>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="title">StrightLine Bottom To Top</div>
+
+            <div class="main-cards">
+
+                <div class="card">
+                    <div class="card-inner">
+                        <h4>FORCE <br> <br>AVG = 0.168 <br>
+                            SD = 0.016</h4>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-inner">
+                        <h4>Correct<br><br>AVG = 2.024<br>
+                            SD = 0.135</h4>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-inner">
+                        <h4>TIME <br><br>
+
+                            2.40 sec</h4>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-inner">
+                        <h4>ERROR <br>
+                            <br>No Error
+                        </h4>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="charts">
+                <canvas id="scatterGraph" width="400" height="300"
+                    style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);"></canvas>
+                <div class="pie animate" style="--p:100;--c:lightgreen">Correct <br> 100%</div>
+            </div>
+            <script src="chart.js"></script>
+
+        </main>
+        <!-- End Main -->
+
+    </div>
+
+    <!-- Scripts -->
+    <!-- ApexCharts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

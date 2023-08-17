@@ -1,81 +1,103 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const { MongoClient, ServerApiVersion } = require('mongodb');
-
+const cors = require('cors'); // Import the cors package
+const mongoose = require('mongoose');
 const app = express();
-const PORT = 3000;
+const port = 3000;
 
-// Middleware to parse incoming JSON data
-app.use(bodyParser.json());
-
-// Replace the connection string with your MongoDB Atlas connection string
-const atlasConnectionString = "mongodb+srv://vaneevan2001:tUIXBL2htACBSSV7@coding.cssu0dx.mongodb.net/?retryWrites=true&w=majority";
-
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
-const client = new MongoClient(atlasConnectionString, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  },
+mongoose.connect('mongodb+srv://vaneevan2001:tUIXBL2htACBSSV7@Coding.cssu0dx.mongodb.net/DrawPencil?retryWrites=true&w=majority',
+{
+  useNewUrlParser: true,
+  useUnifiedTopology: true
 });
 
-app.post('/api/saveDrawing', async (req, res) => {
-  const { touchData } = req.body; // Use the 'touchData' property from the request body
+const touchevSchema = new mongoose.Schema(
+  {
+    x: Number,
+    y: Number,
+    lineWidth: Number,
+    rotationAngle: Number,
+    altitudeAngle: Number,
+    azimuthAngle: Number,
+    currentPageName: String,
+    lineCount: Number,
+    timestamp: String,
+    user: String,
+    distance:  Number,
+    force: Number, // Add the force property
+    timeCounter: Number,},
+    { collection: 'information' }
+);
 
+const TouchEvent = mongoose.model('TouchEvent', touchevSchema, 'information');
+
+app.use(cors()); // Use cors middleware to enable CORS
+
+app.get('/users', async (req, res) => {
   try {
-    // Connect the client to MongoDB Atlas
-    await client.connect();
-
-    const db = client.db('ipad'); // Replace 'mydatabase' with your actual database name
-    const collection = db.collection('touches'); // Replace 'touches' with your desired collection name
-
-    // Insert the touch data into the database
-    await collection.insertOne({ ...touchData });
-
-    // Close the MongoDB connection
-    await client.close();
-
-    return res.status(200).json({ success: true, message: 'Data inserted successfully.' });
-  } catch (err) {
-    console.error('Failed to connect to MongoDB Atlas or insert data:', err);
-    return res.status(500).json({ error: 'Failed to connect to the database or insert data.' });
-  }
-});
-app.get('/api/getData', async (req, res) => {
-  try {
-    // Connect the client to MongoDB Atlas
-    await client.connect();
-
-    const db = client.db('ipad'); // Replace 'mydatabase' with your actual database name
-    const collection = db.collection('touches'); // Replace 'touches' with your desired collection name
-
-    // Fetch all data from the collection
-    const data = await collection.find({}).toArray();
-
-    // Close the MongoDB connection
-    await client.close();
-
-    return res.status(200).json({ success: true, data });
-  } catch (err) {
-    console.error('Failed to connect to MongoDB Atlas or fetch data:', err);
-    return res.status(500).json({ error: 'Failed to connect to the database or fetch data.' });
-  }
-});
-// Start the server and test the MongoDB Atlas connection
-app.listen(PORT, async () => {
-  try {
-    // Connect the client to MongoDB Atlas
-    await client.connect();
-
-    // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
-
-    console.log("Server running on port", PORT);
-    console.log("Pinged your deployment. You successfully connected to MongoDB Atlas!");
-  } catch (err) {
-    console.error('Failed to connect to MongoDB Atlas:', err);
-    process.exit(1); // Exit the process if there's an error
+    const users = await TouchEvent.distinct('user');
+    console.log('Fetched users:', users); // Log the fetched users
+    res.json(users);
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 });
 
+app.get('/pages', async (req, res) => {
+  try {
+    const currentPageNames = await TouchEvent.distinct('currentPageName');
+    console.log('Fetched currentPageNames:', currentPageNames); // Log the fetched currentPageNames
+    res.json(currentPageNames);
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+app.get('/scatterdata', async (req, res) => {
+  const { user } = req.query;
+
+  // Mapping between user-friendly page names and actual page names
+  const pageNameMap = {
+    'left_to_right': 'ipad_pro_11____3.html',
+    'right_to_left': 'ipad_pro_11____4.html',
+    'top_to_bottom': 'ipad_pro_11____7.html',
+    'bottom_to_top': 'ipad_pro_11____8.html',
+    'lefttop_to_bottomright': 'ipad_pro_11____11.html',
+    'rightbottom_to_lefttop': 'ipad_pro_11____12.html',
+    'curve': 'ipad_pro_11____15.html'
+  };
+
+  try {
+    const scatterData = await TouchEvent.find({ user }).select('force timeCounter distance currentPageName');
+    console.log(`Fetched data for user: ${user}`);
+  
+    const pageData = {
+      'ipad_pro_11____3.html': { force: [], timeCounter: [], distance: [] },
+      'ipad_pro_11____4.html': { force: [], timeCounter: [], distance: [] },
+      'ipad_pro_11____7.html': { force: [], timeCounter: [], distance: [] },
+      'ipad_pro_11____8.html': { force: [], timeCounter: [], distance: [] },
+      'ipad_pro_11____11.html': { force: [], timeCounter: [], distance: [] },
+      'ipad_pro_11____12.html': { force: [], timeCounter: [], distance: [] },
+      'ipad_pro_11____15.html': { force: [], timeCounter: [], distance: [] }
+    };
+  
+    scatterData.forEach(entry => {
+      const actualPage = pageNameMap[entry.currentPageName] || entry.currentPageName;
+      pageData[actualPage].force.push(entry.force);
+      pageData[actualPage].timeCounter.push(entry.timeCounter);
+      pageData[actualPage].distance.push(entry.distance);
+    });
+  
+    console.log('Page data:', pageData); // Log the populated page data
+  
+    res.json(pageData);
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});

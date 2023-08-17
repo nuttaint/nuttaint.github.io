@@ -118,7 +118,11 @@ body {
   background-color: #1d1c22;
   cursor: pointer;
 }
-
+canvas { 
+  height: 100vh; 
+  width: 100vw; 
+  display: block;
+}
 .sidebar-list-item>a {
   text-decoration: none;
   color: #ffffff;
@@ -160,19 +164,11 @@ body {
   justify-content: space-between;
 }
 
-.title {
-  margin-left: 10px;
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
-  color: #3e3b3b;
-  font-size: 24px;
-}
 
 .main-cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 20px;
+  gap: 10px;
   margin: 20px 0;
 }
 
@@ -213,25 +209,36 @@ body {
 .card-inner>.material-icons-outlined {
   font-size: 45px;
 }
-
+.cards-container {
+  display: flex;
+  justify-content: space-between; /* Adjust this to control spacing between cards */
+  align-items: center; /* Vertically center the cards */
+  margin-bottom: 20px; /* Add margin between containers */
+}
 .charts {
-  gap: 10px;
   margin-top: 70px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
   margin: 20px 0;
 }
-
+.title {
+  width: 100%;
+  text-align: left;
+  font-size: 24px;
+}
 .charts-card {
-  background-color: #a19292;
+  display: grid;
+  background-color: #ffffff;
   margin-top: 20px;
-  padding: 10px;
-  width: 950px;
+  margin-bottom : 20px;
+  padding: 20px;
+  width: 820px;
   height: 300px;
   -webkit-column-break-inside: avoid;
   border-radius: 20px;
   box-shadow: 0 6px 7px -4px rgba(0, 0, 0.5, 0.5);
+  grid-template-columns: 1fr 1fr  ;
 }
 
 .charts-card2 {
@@ -252,12 +259,30 @@ body {
 }
 
 .line {
-  width: 1070px;
-  border: 2px solid gray;
-  margin: 10px;
-  margin-top: 40px;
+
+  
+  width: 850px;
+  height: 3px;
+  background-color: #3f3c3c;
 }
 
+
+.chart-container {
+  position: relative;
+  width: 400px;
+  height: 350px; /* Increased height to accommodate title and line */
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 40px;
+  margin-left: 20px; /* Adjust this value to shift the chart container to the left */
+  
+}
+.group-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px; /* Add margin between groups */
+}
 /* .img1 {
   position: relative;
   background-image: url(/images/Force.png);
@@ -323,9 +348,9 @@ body {
   }
 
   .charts {
-    grid-template-columns: 1fr;
-    margin-top: 30px;
-    justify-content: center;
+    
+    grid-template-columns: 1fr 1fr;
+
   }
 }
 
