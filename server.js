@@ -24,7 +24,8 @@ const touchevSchema = new mongoose.Schema(
     user: String,
     distance:  Number,
     force: Number, // Add the force property
-    timeCounter: Number,},
+    timeCounter: Number,
+  },
     { collection: 'information' }
 );
 
@@ -68,28 +69,30 @@ app.get('/scatterdata', async (req, res) => {
   };
 
   try {
-    const scatterData = await TouchEvent.find({ user }).select('force timeCounter distance currentPageName');
+    const scatterData = await TouchEvent.find({ user }).select('force timeCounter distance x y currentPageName');
     console.log(`Fetched data for user: ${user}`);
-  
+
     const pageData = {
-      'ipad_pro_11____3.html': { force: [], timeCounter: [], distance: [] },
-      'ipad_pro_11____4.html': { force: [], timeCounter: [], distance: [] },
-      'ipad_pro_11____7.html': { force: [], timeCounter: [], distance: [] },
-      'ipad_pro_11____8.html': { force: [], timeCounter: [], distance: [] },
-      'ipad_pro_11____11.html': { force: [], timeCounter: [], distance: [] },
-      'ipad_pro_11____12.html': { force: [], timeCounter: [], distance: [] },
-      'ipad_pro_11____15.html': { force: [], timeCounter: [], distance: [] }
+      'ipad_pro_11____3.html': { force: [], timeCounter: [], distance: [], x: [], y: [] },
+      'ipad_pro_11____4.html': { force: [], timeCounter: [], distance: [], x: [], y: [] },
+      'ipad_pro_11____7.html': { force: [], timeCounter: [], distance: [], x: [], y: [] },
+      'ipad_pro_11____8.html': { force: [], timeCounter: [], distance: [], x: [], y: [] },
+      'ipad_pro_11____11.html': { force: [], timeCounter: [], distance: [], x: [], y: [] },
+      'ipad_pro_11____12.html': { force: [], timeCounter: [], distance: [], x: [], y: [] },
+      'ipad_pro_11____15.html': { force: [], timeCounter: [], distance: [], x: [], y: [] }
     };
-  
+
     scatterData.forEach(entry => {
       const actualPage = pageNameMap[entry.currentPageName] || entry.currentPageName;
       pageData[actualPage].force.push(entry.force);
       pageData[actualPage].timeCounter.push(entry.timeCounter);
       pageData[actualPage].distance.push(entry.distance);
+      pageData[actualPage].x.push(entry.x); // Add x data to the corresponding page
+      pageData[actualPage].y.push(entry.y); // Add y data to the corresponding page
     });
-  
+
     console.log('Page data:', pageData); // Log the populated page data
-  
+
     res.json(pageData);
   } catch (error) {
     console.error('Error:', error);

@@ -68,34 +68,36 @@ app.get('/scatterdata', async (req, res) => {
   };
 
   try {
-    const scatterData = await TouchEvent.find({ user }).select('force timeCounter currentPageName');
+    const scatterData = await TouchEvent.find({ user }).select('force timeCounter distance x y currentPageName'); // Modify the select statement
     console.log(`Fetched data for user: ${user}`);
-
-    // Initialize arrays for each page
+  
     const pageData = {
-      'ipad_pro_11____3.html': { force: [], timeCounter: [] },
-      'ipad_pro_11____4.html': { force: [], timeCounter: [] },
-      'ipad_pro_11____7.html': { force: [], timeCounter: [] },
-      'ipad_pro_11____8.html': { force: [], timeCounter: [] },
-      'ipad_pro_11____11.html': { force: [], timeCounter: [] },
-      'ipad_pro_11____12.html': { force: [], timeCounter: [] },
-      'ipad_pro_11____15.html': { force: [], timeCounter: [] }
+      'ipad_pro_11____3.html': { force: [], timeCounter: [], distance: [], x: [], y: [] },
+      'ipad_pro_11____4.html': { force: [], timeCounter: [], distance: [], x: [], y: [] },
+      'ipad_pro_11____7.html': { force: [], timeCounter: [], distance: [], x: [], y: [] },
+      'ipad_pro_11____8.html': { force: [], timeCounter: [], distance: [], x: [], y: [] },
+      'ipad_pro_11____11.html': { force: [], timeCounter: [], distance: [], x: [], y: [] },
+      'ipad_pro_11____12.html': { force: [], timeCounter: [], distance: [], x: [], y: [] },
+      'ipad_pro_11____15.html': { force: [], timeCounter: [], distance: [], x: [], y: [] }
     };
-
-    // Populate arrays with data based on currentPageName
+  
     scatterData.forEach(entry => {
       const actualPage = pageNameMap[entry.currentPageName] || entry.currentPageName;
       pageData[actualPage].force.push(entry.force);
       pageData[actualPage].timeCounter.push(entry.timeCounter);
+      pageData[actualPage].distance.push(entry.distance);
+      pageData[actualPage].x.push(entry.x); // Add x data to the corresponding page
+      pageData[actualPage].y.push(entry.y); // Add y data to the corresponding page
     });
-
+  
+    console.log('Page data:', pageData); // Log the populated page data
+  
     res.json(pageData);
   } catch (error) {
     console.error('Error:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
-
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
